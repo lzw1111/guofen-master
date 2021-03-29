@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqSolidliquidProduceFlatmaterialMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqSolidliquidProduceFlatmaterial">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    <result column="sand_output" jdbcType="DOUBLE" property="sandOutput" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="inspector" jdbcType="VARCHAR" property="inspector" />
+    <result column="remarks1" jdbcType="VARCHAR" property="remarks1" />
+    <result column="remarks2" jdbcType="VARCHAR" property="remarks2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, update_time, sand_output, operator, inspector, remarks1, remarks2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_solidliquid_produce_flatmaterial
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getlast" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sjq_solidliquid_produce_flatmaterial
+    where DATE(date) = DATE(NOW())
+    order by id desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_solidliquid_produce_flatmaterial
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqSolidliquidProduceFlatmaterial">
+    insert into sjq_solidliquid_produce_flatmaterial (id, date, update_time, 
+      sand_output, operator, inspector, 
+      remarks1, remarks2)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, 
+      #{sandOutput,jdbcType=DOUBLE}, #{operator,jdbcType=VARCHAR}, #{inspector,jdbcType=VARCHAR}, 
+      #{remarks1,jdbcType=VARCHAR}, #{remarks2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqSolidliquidProduceFlatmaterial">
+    insert into sjq_solidliquid_produce_flatmaterial
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="sandOutput != null">
+        sand_output,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="inspector != null">
+        inspector,
+      </if>
+      <if test="remarks1 != null">
+        remarks1,
+      </if>
+      <if test="remarks2 != null">
+        remarks2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sandOutput != null">
+        #{sandOutput,jdbcType=DOUBLE},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        #{inspector,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks1 != null">
+        #{remarks1,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks2 != null">
+        #{remarks2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqSolidliquidProduceFlatmaterial">
+    update sjq_solidliquid_produce_flatmaterial
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sandOutput != null">
+        sand_output = #{sandOutput,jdbcType=DOUBLE},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        inspector = #{inspector,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks1 != null">
+        remarks1 = #{remarks1,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks2 != null">
+        remarks2 = #{remarks2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqSolidliquidProduceFlatmaterial">
+    update sjq_solidliquid_produce_flatmaterial
+    set date = #{date,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=VARCHAR},
+      sand_output = #{sandOutput,jdbcType=DOUBLE},
+      operator = #{operator,jdbcType=VARCHAR},
+      inspector = #{inspector,jdbcType=VARCHAR},
+      remarks1 = #{remarks1,jdbcType=VARCHAR},
+      remarks2 = #{remarks2,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

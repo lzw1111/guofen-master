@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.ShljStorageBoxCleanMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.ShljStorageBoxClean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="wagon_number" jdbcType="VARCHAR" property="wagonNumber" />
+    <result column="arrival_time" jdbcType="VARCHAR" property="arrivalTime" />
+    <result column="leave_time" jdbcType="VARCHAR" property="leaveTime" />
+    <result column="clean_weight" jdbcType="DOUBLE" property="cleanWeight" />
+    <result column="residue_weight" jdbcType="DOUBLE" property="residueWeight" />
+    <result column="recording_person" jdbcType="VARCHAR" property="recordingPerson" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="clean_type" jdbcType="VARCHAR" property="cleanType" />
+    <result column="residue_type" jdbcType="VARCHAR" property="residueType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, wagon_number, arrival_time, leave_time, clean_weight, residue_weight, recording_person, 
+    remarks, clean_type, residue_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shlj_storage_box_clean
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getLast" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_storage_box_clean
+    where DATE(DATE) = DATE(NOW())
+    order by date desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shlj_storage_box_clean
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.ShljStorageBoxClean">
+    insert into shlj_storage_box_clean (id, date, wagon_number, 
+      arrival_time, leave_time, clean_weight, 
+      residue_weight, recording_person, remarks, 
+      clean_type, residue_type)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{wagonNumber,jdbcType=VARCHAR}, 
+      #{arrivalTime,jdbcType=VARCHAR}, #{leaveTime,jdbcType=VARCHAR}, #{cleanWeight,jdbcType=DOUBLE}, 
+      #{residueWeight,jdbcType=DOUBLE}, #{recordingPerson,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{cleanType,jdbcType=VARCHAR}, #{residueType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.ShljStorageBoxClean">
+    insert into shlj_storage_box_clean
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="wagonNumber != null">
+        wagon_number,
+      </if>
+      <if test="arrivalTime != null">
+        arrival_time,
+      </if>
+      <if test="leaveTime != null">
+        leave_time,
+      </if>
+      <if test="cleanWeight != null">
+        clean_weight,
+      </if>
+      <if test="residueWeight != null">
+        residue_weight,
+      </if>
+      <if test="recordingPerson != null">
+        recording_person,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="cleanType != null">
+        clean_type,
+      </if>
+      <if test="residueType != null">
+        residue_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="wagonNumber != null">
+        #{wagonNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="arrivalTime != null">
+        #{arrivalTime,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveTime != null">
+        #{leaveTime,jdbcType=VARCHAR},
+      </if>
+      <if test="cleanWeight != null">
+        #{cleanWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="residueWeight != null">
+        #{residueWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="recordingPerson != null">
+        #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="cleanType != null">
+        #{cleanType,jdbcType=VARCHAR},
+      </if>
+      <if test="residueType != null">
+        #{residueType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.ShljStorageBoxClean">
+    update shlj_storage_box_clean
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="wagonNumber != null">
+        wagon_number = #{wagonNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="arrivalTime != null">
+        arrival_time = #{arrivalTime,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveTime != null">
+        leave_time = #{leaveTime,jdbcType=VARCHAR},
+      </if>
+      <if test="cleanWeight != null">
+        clean_weight = #{cleanWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="residueWeight != null">
+        residue_weight = #{residueWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="recordingPerson != null">
+        recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="cleanType != null">
+        clean_type = #{cleanType,jdbcType=VARCHAR},
+      </if>
+      <if test="residueType != null">
+        residue_type = #{residueType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.ShljStorageBoxClean">
+    update shlj_storage_box_clean
+    set date = #{date,jdbcType=VARCHAR},
+      wagon_number = #{wagonNumber,jdbcType=VARCHAR},
+      arrival_time = #{arrivalTime,jdbcType=VARCHAR},
+      leave_time = #{leaveTime,jdbcType=VARCHAR},
+      clean_weight = #{cleanWeight,jdbcType=DOUBLE},
+      residue_weight = #{residueWeight,jdbcType=DOUBLE},
+      recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      clean_type = #{cleanType,jdbcType=VARCHAR},
+      residue_type = #{residueType,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

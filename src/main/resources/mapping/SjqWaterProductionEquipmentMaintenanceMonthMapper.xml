@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqWaterProductionEquipmentMaintenanceMonthMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceMonth">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="equipment_id" jdbcType="INTEGER" property="equipmentId" />
+    <result column="maintenance_id" jdbcType="VARCHAR" property="maintenanceId" />
+    <result column="plan_maintenance_date" jdbcType="VARCHAR" property="planMaintenanceDate" />
+    <result column="actual_maintenance_date" jdbcType="VARCHAR" property="actualMaintenanceDate" />
+    <result column="maintenance_result" jdbcType="VARCHAR" property="maintenanceResult" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="examiner" jdbcType="VARCHAR" property="examiner" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, equipment_id, maintenance_id, plan_maintenance_date, actual_maintenance_date, 
+    maintenance_result, operator, examiner, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_water_production_equipment_maintenance_month
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_water_production_equipment_maintenance_month
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceMonth">
+    insert into sjq_water_production_equipment_maintenance_month (id, equipment_id, maintenance_id, 
+      plan_maintenance_date, actual_maintenance_date, 
+      maintenance_result, operator, examiner, 
+      remarks)
+    values (#{id,jdbcType=INTEGER}, #{equipmentId,jdbcType=INTEGER}, #{maintenanceId,jdbcType=VARCHAR}, 
+      #{planMaintenanceDate,jdbcType=VARCHAR}, #{actualMaintenanceDate,jdbcType=VARCHAR}, 
+      #{maintenanceResult,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, #{examiner,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceMonth">
+    insert into sjq_water_production_equipment_maintenance_month
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="equipmentId != null">
+        equipment_id,
+      </if>
+      <if test="maintenanceId != null">
+        maintenance_id,
+      </if>
+      <if test="planMaintenanceDate != null">
+        plan_maintenance_date,
+      </if>
+      <if test="actualMaintenanceDate != null">
+        actual_maintenance_date,
+      </if>
+      <if test="maintenanceResult != null">
+        maintenance_result,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="examiner != null">
+        examiner,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="equipmentId != null">
+        #{equipmentId,jdbcType=INTEGER},
+      </if>
+      <if test="maintenanceId != null">
+        #{maintenanceId,jdbcType=VARCHAR},
+      </if>
+      <if test="planMaintenanceDate != null">
+        #{planMaintenanceDate,jdbcType=VARCHAR},
+      </if>
+      <if test="actualMaintenanceDate != null">
+        #{actualMaintenanceDate,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceResult != null">
+        #{maintenanceResult,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="examiner != null">
+        #{examiner,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceMonth">
+    update sjq_water_production_equipment_maintenance_month
+    <set>
+      <if test="equipmentId != null">
+        equipment_id = #{equipmentId,jdbcType=INTEGER},
+      </if>
+      <if test="maintenanceId != null">
+        maintenance_id = #{maintenanceId,jdbcType=VARCHAR},
+      </if>
+      <if test="planMaintenanceDate != null">
+        plan_maintenance_date = #{planMaintenanceDate,jdbcType=VARCHAR},
+      </if>
+      <if test="actualMaintenanceDate != null">
+        actual_maintenance_date = #{actualMaintenanceDate,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceResult != null">
+        maintenance_result = #{maintenanceResult,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="examiner != null">
+        examiner = #{examiner,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceMonth">
+    update sjq_water_production_equipment_maintenance_month
+    set equipment_id = #{equipmentId,jdbcType=INTEGER},
+      maintenance_id = #{maintenanceId,jdbcType=VARCHAR},
+      plan_maintenance_date = #{planMaintenanceDate,jdbcType=VARCHAR},
+      actual_maintenance_date = #{actualMaintenanceDate,jdbcType=VARCHAR},
+      maintenance_result = #{maintenanceResult,jdbcType=VARCHAR},
+      operator = #{operator,jdbcType=VARCHAR},
+      examiner = #{examiner,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

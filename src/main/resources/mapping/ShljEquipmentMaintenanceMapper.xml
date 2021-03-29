@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.ShljEquipmentMaintenanceMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.ShljEquipmentMaintenance">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="equipment_name" jdbcType="VARCHAR" property="equipmentName" />
+    <result column="maintenance_content" jdbcType="VARCHAR" property="maintenanceContent" />
+    <result column="plan_aintenance_week" jdbcType="VARCHAR" property="planAintenanceWeek" />
+    <result column="actual_aintenance_week" jdbcType="VARCHAR" property="actualAintenanceWeek" />
+    <result column="actual_aintenance_day" jdbcType="VARCHAR" property="actualAintenanceDay" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="method" jdbcType="VARCHAR" property="method" />
+    <result column="examiner" jdbcType="VARCHAR" property="examiner" />
+    <result column="result" jdbcType="VARCHAR" property="result" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, equipment_name, maintenance_content, plan_aintenance_week, actual_aintenance_week, 
+    actual_aintenance_day, operator, method, examiner, result, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shlj_equipment_maintenance
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectLatest" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_equipment_maintenance
+    where equipment_name = #{equipmentsName} and method = #{maintenanceContent} and YEARWEEK(DATE) = YEARWEEK(NOW())
+    order by date desc
+    limit 1
+  </select>
+  <select id="getLast" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_equipment_maintenance
+    where DATE(DATE) = DATE(NOW())
+    order by date desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shlj_equipment_maintenance
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.ShljEquipmentMaintenance">
+    insert into shlj_equipment_maintenance (id, date, equipment_name, 
+      maintenance_content, plan_aintenance_week, 
+      actual_aintenance_week, actual_aintenance_day, 
+      operator, method, examiner, 
+      result, remarks
+      )
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{equipmentName,jdbcType=VARCHAR}, 
+      #{maintenanceContent,jdbcType=VARCHAR}, #{planAintenanceWeek,jdbcType=VARCHAR}, 
+      #{actualAintenanceWeek,jdbcType=VARCHAR}, #{actualAintenanceDay,jdbcType=VARCHAR}, 
+      #{operator,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR}, #{examiner,jdbcType=VARCHAR}, 
+      #{result,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.ShljEquipmentMaintenance">
+    insert into shlj_equipment_maintenance
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="equipmentName != null">
+        equipment_name,
+      </if>
+      <if test="maintenanceContent != null">
+        maintenance_content,
+      </if>
+      <if test="planAintenanceWeek != null">
+        plan_aintenance_week,
+      </if>
+      <if test="actualAintenanceWeek != null">
+        actual_aintenance_week,
+      </if>
+      <if test="actualAintenanceDay != null">
+        actual_aintenance_day,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="method != null">
+        method,
+      </if>
+      <if test="examiner != null">
+        examiner,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentName != null">
+        #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceContent != null">
+        #{maintenanceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="planAintenanceWeek != null">
+        #{planAintenanceWeek,jdbcType=VARCHAR},
+      </if>
+      <if test="actualAintenanceWeek != null">
+        #{actualAintenanceWeek,jdbcType=VARCHAR},
+      </if>
+      <if test="actualAintenanceDay != null">
+        #{actualAintenanceDay,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="examiner != null">
+        #{examiner,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.ShljEquipmentMaintenance">
+    update shlj_equipment_maintenance
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentName != null">
+        equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceContent != null">
+        maintenance_content = #{maintenanceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="planAintenanceWeek != null">
+        plan_aintenance_week = #{planAintenanceWeek,jdbcType=VARCHAR},
+      </if>
+      <if test="actualAintenanceWeek != null">
+        actual_aintenance_week = #{actualAintenanceWeek,jdbcType=VARCHAR},
+      </if>
+      <if test="actualAintenanceDay != null">
+        actual_aintenance_day = #{actualAintenanceDay,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        method = #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="examiner != null">
+        examiner = #{examiner,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.ShljEquipmentMaintenance">
+    update shlj_equipment_maintenance
+    set date = #{date,jdbcType=VARCHAR},
+      equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      maintenance_content = #{maintenanceContent,jdbcType=VARCHAR},
+      plan_aintenance_week = #{planAintenanceWeek,jdbcType=VARCHAR},
+      actual_aintenance_week = #{actualAintenanceWeek,jdbcType=VARCHAR},
+      actual_aintenance_day = #{actualAintenanceDay,jdbcType=VARCHAR},
+      operator = #{operator,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      examiner = #{examiner,jdbcType=VARCHAR},
+      result = #{result,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

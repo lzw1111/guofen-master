@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqWaterProductionDeliverWaterMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqWaterProductionDeliverWater">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="train_number" jdbcType="INTEGER" property="trainNumber" />
+    <result column="weight" jdbcType="DOUBLE" property="weight" />
+    <result column="deliver_person" jdbcType="VARCHAR" property="deliverPerson" />
+    <result column="recording_person" jdbcType="VARCHAR" property="recordingPerson" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, train_number, weight, deliver_person, recording_person, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_water_production_deliver_water
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_water_production_deliver_water
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqWaterProductionDeliverWater">
+    insert into sjq_water_production_deliver_water (id, date, train_number, 
+      weight, deliver_person, recording_person, 
+      remarks)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{trainNumber,jdbcType=INTEGER}, 
+      #{weight,jdbcType=DOUBLE}, #{deliverPerson,jdbcType=VARCHAR}, #{recordingPerson,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqWaterProductionDeliverWater">
+    insert into sjq_water_production_deliver_water
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="trainNumber != null">
+        train_number,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="deliverPerson != null">
+        deliver_person,
+      </if>
+      <if test="recordingPerson != null">
+        recording_person,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="trainNumber != null">
+        #{trainNumber,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="deliverPerson != null">
+        #{deliverPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqWaterProductionDeliverWater">
+    update sjq_water_production_deliver_water
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="trainNumber != null">
+        train_number = #{trainNumber,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="deliverPerson != null">
+        deliver_person = #{deliverPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqWaterProductionDeliverWater">
+    update sjq_water_production_deliver_water
+    set date = #{date,jdbcType=VARCHAR},
+      train_number = #{trainNumber,jdbcType=INTEGER},
+      weight = #{weight,jdbcType=DOUBLE},
+      deliver_person = #{deliverPerson,jdbcType=VARCHAR},
+      recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

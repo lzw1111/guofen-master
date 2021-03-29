@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.RdFeedMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.RdFeed">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="feed_date" jdbcType="VARCHAR" property="feedDate" />
+    <result column="crush_starttime" jdbcType="VARCHAR" property="crushStarttime" />
+    <result column="crush_endtime" jdbcType="VARCHAR" property="crushEndtime" />
+    <result column="mix_starttime" jdbcType="VARCHAR" property="mixStarttime" />
+    <result column="mix_endtime" jdbcType="VARCHAR" property="mixEndtime" />
+    <result column="feed_starttime" jdbcType="VARCHAR" property="feedStarttime" />
+    <result column="feed_endtime" jdbcType="VARCHAR" property="feedEndtime" />
+    <result column="device_name" jdbcType="VARCHAR" property="deviceName" />
+    <result column="batch" jdbcType="VARCHAR" property="batch" />
+    <result column="zubie" jdbcType="INTEGER" property="zubie" />
+    <result column="box_number" jdbcType="INTEGER" property="boxNumber" />
+    <result column="feed_weight" jdbcType="DOUBLE" property="feedWeight" />
+    <result column="insect_residus_box_weight" jdbcType="DOUBLE" property="insectResidusBoxWeight" />
+    <result column="box_weight" jdbcType="DOUBLE" property="boxWeight" />
+    <result column="recorder" jdbcType="VARCHAR" property="recorder" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, feed_date, crush_starttime, crush_endtime, mix_starttime, mix_endtime, feed_starttime, 
+    feed_endtime, device_name, batch, zubie, box_number, feed_weight, insect_residus_box_weight, 
+    box_weight, recorder, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rd_feed
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getlast" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from rd_feed
+    where DATE(feed_date) = DATE(NOW())
+    order by id desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rd_feed
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.RdFeed">
+    insert into rd_feed (id, feed_date, crush_starttime, 
+      crush_endtime, mix_starttime, mix_endtime, 
+      feed_starttime, feed_endtime, device_name, 
+      batch, zubie, box_number, 
+      feed_weight, insect_residus_box_weight, box_weight, 
+      recorder, remark)
+    values (#{id,jdbcType=INTEGER}, #{feedDate,jdbcType=VARCHAR}, #{crushStarttime,jdbcType=VARCHAR}, 
+      #{crushEndtime,jdbcType=VARCHAR}, #{mixStarttime,jdbcType=VARCHAR}, #{mixEndtime,jdbcType=VARCHAR}, 
+      #{feedStarttime,jdbcType=VARCHAR}, #{feedEndtime,jdbcType=VARCHAR}, #{deviceName,jdbcType=VARCHAR}, 
+      #{batch,jdbcType=VARCHAR}, #{zubie,jdbcType=INTEGER}, #{boxNumber,jdbcType=INTEGER}, 
+      #{feedWeight,jdbcType=DOUBLE}, #{insectResidusBoxWeight,jdbcType=DOUBLE}, #{boxWeight,jdbcType=DOUBLE}, 
+      #{recorder,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.RdFeed">
+    insert into rd_feed
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="feedDate != null">
+        feed_date,
+      </if>
+      <if test="crushStarttime != null">
+        crush_starttime,
+      </if>
+      <if test="crushEndtime != null">
+        crush_endtime,
+      </if>
+      <if test="mixStarttime != null">
+        mix_starttime,
+      </if>
+      <if test="mixEndtime != null">
+        mix_endtime,
+      </if>
+      <if test="feedStarttime != null">
+        feed_starttime,
+      </if>
+      <if test="feedEndtime != null">
+        feed_endtime,
+      </if>
+      <if test="deviceName != null">
+        device_name,
+      </if>
+      <if test="batch != null">
+        batch,
+      </if>
+      <if test="zubie != null">
+        zubie,
+      </if>
+      <if test="boxNumber != null">
+        box_number,
+      </if>
+      <if test="feedWeight != null">
+        feed_weight,
+      </if>
+      <if test="insectResidusBoxWeight != null">
+        insect_residus_box_weight,
+      </if>
+      <if test="boxWeight != null">
+        box_weight,
+      </if>
+      <if test="recorder != null">
+        recorder,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="feedDate != null">
+        #{feedDate,jdbcType=VARCHAR},
+      </if>
+      <if test="crushStarttime != null">
+        #{crushStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="crushEndtime != null">
+        #{crushEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mixStarttime != null">
+        #{mixStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="mixEndtime != null">
+        #{mixEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="feedStarttime != null">
+        #{feedStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="feedEndtime != null">
+        #{feedEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="batch != null">
+        #{batch,jdbcType=VARCHAR},
+      </if>
+      <if test="zubie != null">
+        #{zubie,jdbcType=INTEGER},
+      </if>
+      <if test="boxNumber != null">
+        #{boxNumber,jdbcType=INTEGER},
+      </if>
+      <if test="feedWeight != null">
+        #{feedWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectResidusBoxWeight != null">
+        #{insectResidusBoxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="boxWeight != null">
+        #{boxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="recorder != null">
+        #{recorder,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.RdFeed">
+    update rd_feed
+    <set>
+      <if test="feedDate != null">
+        feed_date = #{feedDate,jdbcType=VARCHAR},
+      </if>
+      <if test="crushStarttime != null">
+        crush_starttime = #{crushStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="crushEndtime != null">
+        crush_endtime = #{crushEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mixStarttime != null">
+        mix_starttime = #{mixStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="mixEndtime != null">
+        mix_endtime = #{mixEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="feedStarttime != null">
+        feed_starttime = #{feedStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="feedEndtime != null">
+        feed_endtime = #{feedEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        device_name = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="batch != null">
+        batch = #{batch,jdbcType=VARCHAR},
+      </if>
+      <if test="zubie != null">
+        zubie = #{zubie,jdbcType=INTEGER},
+      </if>
+      <if test="boxNumber != null">
+        box_number = #{boxNumber,jdbcType=INTEGER},
+      </if>
+      <if test="feedWeight != null">
+        feed_weight = #{feedWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectResidusBoxWeight != null">
+        insect_residus_box_weight = #{insectResidusBoxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="boxWeight != null">
+        box_weight = #{boxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="recorder != null">
+        recorder = #{recorder,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.RdFeed">
+    update rd_feed
+    set feed_date = #{feedDate,jdbcType=VARCHAR},
+      crush_starttime = #{crushStarttime,jdbcType=VARCHAR},
+      crush_endtime = #{crushEndtime,jdbcType=VARCHAR},
+      mix_starttime = #{mixStarttime,jdbcType=VARCHAR},
+      mix_endtime = #{mixEndtime,jdbcType=VARCHAR},
+      feed_starttime = #{feedStarttime,jdbcType=VARCHAR},
+      feed_endtime = #{feedEndtime,jdbcType=VARCHAR},
+      device_name = #{deviceName,jdbcType=VARCHAR},
+      batch = #{batch,jdbcType=VARCHAR},
+      zubie = #{zubie,jdbcType=INTEGER},
+      box_number = #{boxNumber,jdbcType=INTEGER},
+      feed_weight = #{feedWeight,jdbcType=DOUBLE},
+      insect_residus_box_weight = #{insectResidusBoxWeight,jdbcType=DOUBLE},
+      box_weight = #{boxWeight,jdbcType=DOUBLE},
+      recorder = #{recorder,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

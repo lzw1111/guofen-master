@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqOverhaulMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqOverhaul">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="date" jdbcType="VARCHAR" property="date" />
+    <result column="equipment_name" jdbcType="VARCHAR" property="equipmentName" />
+    <result column="start_time" jdbcType="VARCHAR" property="startTime" />
+    <result column="end_time" jdbcType="VARCHAR" property="endTime" />
+    <result column="person_incharge" jdbcType="VARCHAR" property="personIncharge" />
+    <result column="process" jdbcType="VARCHAR" property="process" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, equipment_name, start_time, end_time, person_incharge, process
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_overhaul
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_overhaul
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqOverhaul">
+    insert into sjq_overhaul (id, date, equipment_name, start_time,
+      end_time, person_incharge, process
+      )
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{equipmentName,jdbcType=VARCHAR}, #{startTime,jdbcType=VARCHAR},
+      #{endTime,jdbcType=VARCHAR}, #{personIncharge,jdbcType=VARCHAR}, #{process,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqOverhaul">
+    insert into sjq_overhaul
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="equipmentName != null">
+        equipment_name,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="personIncharge != null">
+        person_incharge,
+      </if>
+      <if test="process != null">
+        process,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="equipmentName != null">
+        #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=VARCHAR},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=VARCHAR},
+      </if>
+      <if test="personIncharge != null">
+        #{personIncharge,jdbcType=VARCHAR},
+      </if>
+      <if test="process != null">
+        #{process,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqOverhaul">
+    update sjq_overhaul
+    <set>
+      <if test="equipmentName != null">
+        equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=VARCHAR},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=VARCHAR},
+      </if>
+      <if test="personIncharge != null">
+        person_incharge = #{personIncharge,jdbcType=VARCHAR},
+      </if>
+      <if test="process != null">
+        process = #{process,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqOverhaul">
+    update sjq_overhaul
+    set equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=VARCHAR},
+      end_time = #{endTime,jdbcType=VARCHAR},
+      person_incharge = #{personIncharge,jdbcType=VARCHAR},
+      process = #{process,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findLast" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sjq_overhaul
+    where id=(select max(id) from sjq_overhaul)
+  </select>
+</mapper>

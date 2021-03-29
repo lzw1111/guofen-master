@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.KitchenwasteIncomeMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.KitchenwasteIncome">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="income_date" jdbcType="VARCHAR" property="incomeDate" />
+    <result column="income_weight" jdbcType="DOUBLE" property="incomeWeight" />
+    <result column="bucket_weight" jdbcType="DOUBLE" property="bucketWeight" />
+    <result column="water_weight" jdbcType="DOUBLE" property="waterWeight" />
+    <result column="impurity_weight" jdbcType="DOUBLE" property="impurityWeight" />
+    <result column="income_netweight" jdbcType="DOUBLE" property="incomeNetweight" />
+    <result column="feed_weight" jdbcType="DOUBLE" property="feedWeight" />
+    <result column="cultivation_weight" jdbcType="DOUBLE" property="cultivationWeight" />
+    <result column="throw_weight" jdbcType="DOUBLE" property="throwWeight" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, income_date, income_weight, bucket_weight, water_weight, impurity_weight, income_netweight, 
+    feed_weight, cultivation_weight, throw_weight, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from kitchenwaste_income
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getlast" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from kitchenwaste_income
+    where DATE(income_date) = DATE(NOW())
+    order by id desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from kitchenwaste_income
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.KitchenwasteIncome">
+    insert into kitchenwaste_income (id, income_date, income_weight, 
+      bucket_weight, water_weight, impurity_weight, 
+      income_netweight, feed_weight, cultivation_weight, 
+      throw_weight, remark)
+    values (#{id,jdbcType=INTEGER}, #{incomeDate,jdbcType=VARCHAR}, #{incomeWeight,jdbcType=DOUBLE}, 
+      #{bucketWeight,jdbcType=DOUBLE}, #{waterWeight,jdbcType=DOUBLE}, #{impurityWeight,jdbcType=DOUBLE}, 
+      #{incomeNetweight,jdbcType=DOUBLE}, #{feedWeight,jdbcType=DOUBLE}, #{cultivationWeight,jdbcType=DOUBLE}, 
+      #{throwWeight,jdbcType=DOUBLE}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.KitchenwasteIncome">
+    insert into kitchenwaste_income
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="incomeDate != null">
+        income_date,
+      </if>
+      <if test="incomeWeight != null">
+        income_weight,
+      </if>
+      <if test="bucketWeight != null">
+        bucket_weight,
+      </if>
+      <if test="waterWeight != null">
+        water_weight,
+      </if>
+      <if test="impurityWeight != null">
+        impurity_weight,
+      </if>
+      <if test="incomeNetweight != null">
+        income_netweight,
+      </if>
+      <if test="feedWeight != null">
+        feed_weight,
+      </if>
+      <if test="cultivationWeight != null">
+        cultivation_weight,
+      </if>
+      <if test="throwWeight != null">
+        throw_weight,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="incomeDate != null">
+        #{incomeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeWeight != null">
+        #{incomeWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="bucketWeight != null">
+        #{bucketWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="waterWeight != null">
+        #{waterWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="impurityWeight != null">
+        #{impurityWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="incomeNetweight != null">
+        #{incomeNetweight,jdbcType=DOUBLE},
+      </if>
+      <if test="feedWeight != null">
+        #{feedWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="cultivationWeight != null">
+        #{cultivationWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="throwWeight != null">
+        #{throwWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.KitchenwasteIncome">
+    update kitchenwaste_income
+    <set>
+      <if test="incomeDate != null">
+        income_date = #{incomeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeWeight != null">
+        income_weight = #{incomeWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="bucketWeight != null">
+        bucket_weight = #{bucketWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="waterWeight != null">
+        water_weight = #{waterWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="impurityWeight != null">
+        impurity_weight = #{impurityWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="incomeNetweight != null">
+        income_netweight = #{incomeNetweight,jdbcType=DOUBLE},
+      </if>
+      <if test="feedWeight != null">
+        feed_weight = #{feedWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="cultivationWeight != null">
+        cultivation_weight = #{cultivationWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="throwWeight != null">
+        throw_weight = #{throwWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.KitchenwasteIncome">
+    update kitchenwaste_income
+    set income_date = #{incomeDate,jdbcType=VARCHAR},
+      income_weight = #{incomeWeight,jdbcType=DOUBLE},
+      bucket_weight = #{bucketWeight,jdbcType=DOUBLE},
+      water_weight = #{waterWeight,jdbcType=DOUBLE},
+      impurity_weight = #{impurityWeight,jdbcType=DOUBLE},
+      income_netweight = #{incomeNetweight,jdbcType=DOUBLE},
+      feed_weight = #{feedWeight,jdbcType=DOUBLE},
+      cultivation_weight = #{cultivationWeight,jdbcType=DOUBLE},
+      throw_weight = #{throwWeight,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

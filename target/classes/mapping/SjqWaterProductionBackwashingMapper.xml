@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqWaterProductionBackwashingMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqWaterProductionBackwashing">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="plan_backwashing_date" jdbcType="VARCHAR" property="planBackwashingDate" />
+    <result column="actual_backwashing_date" jdbcType="VARCHAR" property="actualBackwashingDate" />
+    <result column="backwashing_pump_open_time_1" jdbcType="VARCHAR" property="backwashingPumpOpenTime1" />
+    <result column="backwashing_pump_close_timer_1" jdbcType="VARCHAR" property="backwashingPumpCloseTimer1" />
+    <result column="backwashing_pump_running_time_1" jdbcType="VARCHAR" property="backwashingPumpRunningTime1" />
+    <result column="is_running_time_24_1" jdbcType="VARCHAR" property="isRunningTime241" />
+    <result column="is_flowmeter_5_1" jdbcType="VARCHAR" property="isFlowmeter51" />
+    <result column="backwashing_pump_open_time_2" jdbcType="VARCHAR" property="backwashingPumpOpenTime2" />
+    <result column="backwashing_pump_close_timer_2" jdbcType="VARCHAR" property="backwashingPumpCloseTimer2" />
+    <result column="backwashing_pump_running_time_2" jdbcType="VARCHAR" property="backwashingPumpRunningTime2" />
+    <result column="is_running_time_24_2" jdbcType="VARCHAR" property="isRunningTime242" />
+    <result column="is_flowmeter_5_2" jdbcType="VARCHAR" property="isFlowmeter52" />
+    <result column="backwashing_pump_open_time_3" jdbcType="VARCHAR" property="backwashingPumpOpenTime3" />
+    <result column="backwashing_pump_close_timer_3" jdbcType="VARCHAR" property="backwashingPumpCloseTimer3" />
+    <result column="backwashing_pump_running_time_3" jdbcType="VARCHAR" property="backwashingPumpRunningTime3" />
+    <result column="is_running_time_24_3" jdbcType="VARCHAR" property="isRunningTime243" />
+    <result column="is_flowmeter_5_3" jdbcType="VARCHAR" property="isFlowmeter53" />
+    <result column="drug_name" jdbcType="VARCHAR" property="drugName" />
+    <result column="drug_specifications" jdbcType="VARCHAR" property="drugSpecifications" />
+    <result column="drug_dosage" jdbcType="DOUBLE" property="drugDosage" />
+    <result column="add_water" jdbcType="DOUBLE" property="addWater" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, plan_backwashing_date, actual_backwashing_date, backwashing_pump_open_time_1, 
+    backwashing_pump_close_timer_1, backwashing_pump_running_time_1, is_running_time_24_1, 
+    is_flowmeter_5_1, backwashing_pump_open_time_2, backwashing_pump_close_timer_2, backwashing_pump_running_time_2, 
+    is_running_time_24_2, is_flowmeter_5_2, backwashing_pump_open_time_3, backwashing_pump_close_timer_3, 
+    backwashing_pump_running_time_3, is_running_time_24_3, is_flowmeter_5_3, drug_name, 
+    drug_specifications, drug_dosage, add_water, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_water_production_backwashing
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_water_production_backwashing
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqWaterProductionBackwashing">
+    insert into sjq_water_production_backwashing (id, date, plan_backwashing_date, 
+      actual_backwashing_date, backwashing_pump_open_time_1, 
+      backwashing_pump_close_timer_1, backwashing_pump_running_time_1, 
+      is_running_time_24_1, is_flowmeter_5_1, backwashing_pump_open_time_2, 
+      backwashing_pump_close_timer_2, backwashing_pump_running_time_2, 
+      is_running_time_24_2, is_flowmeter_5_2, backwashing_pump_open_time_3, 
+      backwashing_pump_close_timer_3, backwashing_pump_running_time_3, 
+      is_running_time_24_3, is_flowmeter_5_3, drug_name, 
+      drug_specifications, drug_dosage, add_water, 
+      remarks)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{planBackwashingDate,jdbcType=VARCHAR}, 
+      #{actualBackwashingDate,jdbcType=VARCHAR}, #{backwashingPumpOpenTime1,jdbcType=VARCHAR}, 
+      #{backwashingPumpCloseTimer1,jdbcType=VARCHAR}, #{backwashingPumpRunningTime1,jdbcType=VARCHAR}, 
+      #{isRunningTime241,jdbcType=VARCHAR}, #{isFlowmeter51,jdbcType=VARCHAR}, #{backwashingPumpOpenTime2,jdbcType=VARCHAR}, 
+      #{backwashingPumpCloseTimer2,jdbcType=VARCHAR}, #{backwashingPumpRunningTime2,jdbcType=VARCHAR}, 
+      #{isRunningTime242,jdbcType=VARCHAR}, #{isFlowmeter52,jdbcType=VARCHAR}, #{backwashingPumpOpenTime3,jdbcType=VARCHAR}, 
+      #{backwashingPumpCloseTimer3,jdbcType=VARCHAR}, #{backwashingPumpRunningTime3,jdbcType=VARCHAR}, 
+      #{isRunningTime243,jdbcType=VARCHAR}, #{isFlowmeter53,jdbcType=VARCHAR}, #{drugName,jdbcType=VARCHAR}, 
+      #{drugSpecifications,jdbcType=VARCHAR}, #{drugDosage,jdbcType=DOUBLE}, #{addWater,jdbcType=DOUBLE}, 
+      #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqWaterProductionBackwashing">
+    insert into sjq_water_production_backwashing
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="planBackwashingDate != null">
+        plan_backwashing_date,
+      </if>
+      <if test="actualBackwashingDate != null">
+        actual_backwashing_date,
+      </if>
+      <if test="backwashingPumpOpenTime1 != null">
+        backwashing_pump_open_time_1,
+      </if>
+      <if test="backwashingPumpCloseTimer1 != null">
+        backwashing_pump_close_timer_1,
+      </if>
+      <if test="backwashingPumpRunningTime1 != null">
+        backwashing_pump_running_time_1,
+      </if>
+      <if test="isRunningTime241 != null">
+        is_running_time_24_1,
+      </if>
+      <if test="isFlowmeter51 != null">
+        is_flowmeter_5_1,
+      </if>
+      <if test="backwashingPumpOpenTime2 != null">
+        backwashing_pump_open_time_2,
+      </if>
+      <if test="backwashingPumpCloseTimer2 != null">
+        backwashing_pump_close_timer_2,
+      </if>
+      <if test="backwashingPumpRunningTime2 != null">
+        backwashing_pump_running_time_2,
+      </if>
+      <if test="isRunningTime242 != null">
+        is_running_time_24_2,
+      </if>
+      <if test="isFlowmeter52 != null">
+        is_flowmeter_5_2,
+      </if>
+      <if test="backwashingPumpOpenTime3 != null">
+        backwashing_pump_open_time_3,
+      </if>
+      <if test="backwashingPumpCloseTimer3 != null">
+        backwashing_pump_close_timer_3,
+      </if>
+      <if test="backwashingPumpRunningTime3 != null">
+        backwashing_pump_running_time_3,
+      </if>
+      <if test="isRunningTime243 != null">
+        is_running_time_24_3,
+      </if>
+      <if test="isFlowmeter53 != null">
+        is_flowmeter_5_3,
+      </if>
+      <if test="drugName != null">
+        drug_name,
+      </if>
+      <if test="drugSpecifications != null">
+        drug_specifications,
+      </if>
+      <if test="drugDosage != null">
+        drug_dosage,
+      </if>
+      <if test="addWater != null">
+        add_water,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="planBackwashingDate != null">
+        #{planBackwashingDate,jdbcType=VARCHAR},
+      </if>
+      <if test="actualBackwashingDate != null">
+        #{actualBackwashingDate,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpOpenTime1 != null">
+        #{backwashingPumpOpenTime1,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpCloseTimer1 != null">
+        #{backwashingPumpCloseTimer1,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpRunningTime1 != null">
+        #{backwashingPumpRunningTime1,jdbcType=VARCHAR},
+      </if>
+      <if test="isRunningTime241 != null">
+        #{isRunningTime241,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlowmeter51 != null">
+        #{isFlowmeter51,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpOpenTime2 != null">
+        #{backwashingPumpOpenTime2,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpCloseTimer2 != null">
+        #{backwashingPumpCloseTimer2,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpRunningTime2 != null">
+        #{backwashingPumpRunningTime2,jdbcType=VARCHAR},
+      </if>
+      <if test="isRunningTime242 != null">
+        #{isRunningTime242,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlowmeter52 != null">
+        #{isFlowmeter52,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpOpenTime3 != null">
+        #{backwashingPumpOpenTime3,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpCloseTimer3 != null">
+        #{backwashingPumpCloseTimer3,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpRunningTime3 != null">
+        #{backwashingPumpRunningTime3,jdbcType=VARCHAR},
+      </if>
+      <if test="isRunningTime243 != null">
+        #{isRunningTime243,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlowmeter53 != null">
+        #{isFlowmeter53,jdbcType=VARCHAR},
+      </if>
+      <if test="drugName != null">
+        #{drugName,jdbcType=VARCHAR},
+      </if>
+      <if test="drugSpecifications != null">
+        #{drugSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="drugDosage != null">
+        #{drugDosage,jdbcType=DOUBLE},
+      </if>
+      <if test="addWater != null">
+        #{addWater,jdbcType=DOUBLE},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqWaterProductionBackwashing">
+    update sjq_water_production_backwashing
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="planBackwashingDate != null">
+        plan_backwashing_date = #{planBackwashingDate,jdbcType=VARCHAR},
+      </if>
+      <if test="actualBackwashingDate != null">
+        actual_backwashing_date = #{actualBackwashingDate,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpOpenTime1 != null">
+        backwashing_pump_open_time_1 = #{backwashingPumpOpenTime1,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpCloseTimer1 != null">
+        backwashing_pump_close_timer_1 = #{backwashingPumpCloseTimer1,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpRunningTime1 != null">
+        backwashing_pump_running_time_1 = #{backwashingPumpRunningTime1,jdbcType=VARCHAR},
+      </if>
+      <if test="isRunningTime241 != null">
+        is_running_time_24_1 = #{isRunningTime241,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlowmeter51 != null">
+        is_flowmeter_5_1 = #{isFlowmeter51,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpOpenTime2 != null">
+        backwashing_pump_open_time_2 = #{backwashingPumpOpenTime2,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpCloseTimer2 != null">
+        backwashing_pump_close_timer_2 = #{backwashingPumpCloseTimer2,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpRunningTime2 != null">
+        backwashing_pump_running_time_2 = #{backwashingPumpRunningTime2,jdbcType=VARCHAR},
+      </if>
+      <if test="isRunningTime242 != null">
+        is_running_time_24_2 = #{isRunningTime242,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlowmeter52 != null">
+        is_flowmeter_5_2 = #{isFlowmeter52,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpOpenTime3 != null">
+        backwashing_pump_open_time_3 = #{backwashingPumpOpenTime3,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpCloseTimer3 != null">
+        backwashing_pump_close_timer_3 = #{backwashingPumpCloseTimer3,jdbcType=VARCHAR},
+      </if>
+      <if test="backwashingPumpRunningTime3 != null">
+        backwashing_pump_running_time_3 = #{backwashingPumpRunningTime3,jdbcType=VARCHAR},
+      </if>
+      <if test="isRunningTime243 != null">
+        is_running_time_24_3 = #{isRunningTime243,jdbcType=VARCHAR},
+      </if>
+      <if test="isFlowmeter53 != null">
+        is_flowmeter_5_3 = #{isFlowmeter53,jdbcType=VARCHAR},
+      </if>
+      <if test="drugName != null">
+        drug_name = #{drugName,jdbcType=VARCHAR},
+      </if>
+      <if test="drugSpecifications != null">
+        drug_specifications = #{drugSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="drugDosage != null">
+        drug_dosage = #{drugDosage,jdbcType=DOUBLE},
+      </if>
+      <if test="addWater != null">
+        add_water = #{addWater,jdbcType=DOUBLE},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqWaterProductionBackwashing">
+    update sjq_water_production_backwashing
+    set date = #{date,jdbcType=VARCHAR},
+      plan_backwashing_date = #{planBackwashingDate,jdbcType=VARCHAR},
+      actual_backwashing_date = #{actualBackwashingDate,jdbcType=VARCHAR},
+      backwashing_pump_open_time_1 = #{backwashingPumpOpenTime1,jdbcType=VARCHAR},
+      backwashing_pump_close_timer_1 = #{backwashingPumpCloseTimer1,jdbcType=VARCHAR},
+      backwashing_pump_running_time_1 = #{backwashingPumpRunningTime1,jdbcType=VARCHAR},
+      is_running_time_24_1 = #{isRunningTime241,jdbcType=VARCHAR},
+      is_flowmeter_5_1 = #{isFlowmeter51,jdbcType=VARCHAR},
+      backwashing_pump_open_time_2 = #{backwashingPumpOpenTime2,jdbcType=VARCHAR},
+      backwashing_pump_close_timer_2 = #{backwashingPumpCloseTimer2,jdbcType=VARCHAR},
+      backwashing_pump_running_time_2 = #{backwashingPumpRunningTime2,jdbcType=VARCHAR},
+      is_running_time_24_2 = #{isRunningTime242,jdbcType=VARCHAR},
+      is_flowmeter_5_2 = #{isFlowmeter52,jdbcType=VARCHAR},
+      backwashing_pump_open_time_3 = #{backwashingPumpOpenTime3,jdbcType=VARCHAR},
+      backwashing_pump_close_timer_3 = #{backwashingPumpCloseTimer3,jdbcType=VARCHAR},
+      backwashing_pump_running_time_3 = #{backwashingPumpRunningTime3,jdbcType=VARCHAR},
+      is_running_time_24_3 = #{isRunningTime243,jdbcType=VARCHAR},
+      is_flowmeter_5_3 = #{isFlowmeter53,jdbcType=VARCHAR},
+      drug_name = #{drugName,jdbcType=VARCHAR},
+      drug_specifications = #{drugSpecifications,jdbcType=VARCHAR},
+      drug_dosage = #{drugDosage,jdbcType=DOUBLE},
+      add_water = #{addWater,jdbcType=DOUBLE},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqWaterProductionElectricityConsumptionMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqWaterProductionElectricityConsumption">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="meter_reading_time" jdbcType="VARCHAR" property="meterReadingTime" />
+    <result column="w_meter_reading" jdbcType="DOUBLE" property="wMeterReading" />
+    <result column="c_meter_reading" jdbcType="DOUBLE" property="cMeterReading" />
+    <result column="reading_person" jdbcType="VARCHAR" property="readingPerson" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, meter_reading_time, w_meter_reading, c_meter_reading, reading_person, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_water_production_electricity_consumption
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_water_production_electricity_consumption
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqWaterProductionElectricityConsumption">
+    insert into sjq_water_production_electricity_consumption (id, date, meter_reading_time, 
+      w_meter_reading, c_meter_reading, reading_person, 
+      remarks)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{meterReadingTime,jdbcType=VARCHAR}, 
+      #{wMeterReading,jdbcType=DOUBLE}, #{cMeterReading,jdbcType=DOUBLE}, #{readingPerson,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqWaterProductionElectricityConsumption">
+    insert into sjq_water_production_electricity_consumption
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="meterReadingTime != null">
+        meter_reading_time,
+      </if>
+      <if test="wMeterReading != null">
+        w_meter_reading,
+      </if>
+      <if test="cMeterReading != null">
+        c_meter_reading,
+      </if>
+      <if test="readingPerson != null">
+        reading_person,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="meterReadingTime != null">
+        #{meterReadingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="wMeterReading != null">
+        #{wMeterReading,jdbcType=DOUBLE},
+      </if>
+      <if test="cMeterReading != null">
+        #{cMeterReading,jdbcType=DOUBLE},
+      </if>
+      <if test="readingPerson != null">
+        #{readingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqWaterProductionElectricityConsumption">
+    update sjq_water_production_electricity_consumption
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="meterReadingTime != null">
+        meter_reading_time = #{meterReadingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="wMeterReading != null">
+        w_meter_reading = #{wMeterReading,jdbcType=DOUBLE},
+      </if>
+      <if test="cMeterReading != null">
+        c_meter_reading = #{cMeterReading,jdbcType=DOUBLE},
+      </if>
+      <if test="readingPerson != null">
+        reading_person = #{readingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqWaterProductionElectricityConsumption">
+    update sjq_water_production_electricity_consumption
+    set date = #{date,jdbcType=VARCHAR},
+      meter_reading_time = #{meterReadingTime,jdbcType=VARCHAR},
+      w_meter_reading = #{wMeterReading,jdbcType=DOUBLE},
+      c_meter_reading = #{cMeterReading,jdbcType=DOUBLE},
+      reading_person = #{readingPerson,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

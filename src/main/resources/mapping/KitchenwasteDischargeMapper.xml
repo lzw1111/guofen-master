@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.KitchenwasteDischargeMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.KitchenwasteDischarge">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="discharge_date" jdbcType="VARCHAR" property="dischargeDate" />
+    <result column="income_date" jdbcType="VARCHAR" property="incomeDate" />
+    <result column="cabinet_number" jdbcType="INTEGER" property="cabinetNumber" />
+    <result column="layer_number" jdbcType="INTEGER" property="layerNumber" />
+    <result column="insect_dung_weight" jdbcType="DOUBLE" property="insectDungWeight" />
+    <result column="insect_weight" jdbcType="DOUBLE" property="insectWeight" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, discharge_date, income_date, cabinet_number, layer_number, insect_dung_weight, 
+    insect_weight, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from kitchenwaste_discharge
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getLast" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from kitchenwaste_discharge
+    where DATE(discharge_date) = DATE(NOW())
+    order by id desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from kitchenwaste_discharge
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.KitchenwasteDischarge">
+    insert into kitchenwaste_discharge (id, discharge_date, income_date, 
+      cabinet_number, layer_number, insect_dung_weight, 
+      insect_weight, remark)
+    values (#{id,jdbcType=INTEGER}, #{dischargeDate,jdbcType=VARCHAR}, #{incomeDate,jdbcType=VARCHAR}, 
+      #{cabinetNumber,jdbcType=INTEGER}, #{layerNumber,jdbcType=INTEGER}, #{insectDungWeight,jdbcType=DOUBLE}, 
+      #{insectWeight,jdbcType=DOUBLE}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.KitchenwasteDischarge">
+    insert into kitchenwaste_discharge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="dischargeDate != null">
+        discharge_date,
+      </if>
+      <if test="incomeDate != null">
+        income_date,
+      </if>
+      <if test="cabinetNumber != null">
+        cabinet_number,
+      </if>
+      <if test="layerNumber != null">
+        layer_number,
+      </if>
+      <if test="insectDungWeight != null">
+        insect_dung_weight,
+      </if>
+      <if test="insectWeight != null">
+        insect_weight,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="dischargeDate != null">
+        #{dischargeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeDate != null">
+        #{incomeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="cabinetNumber != null">
+        #{cabinetNumber,jdbcType=INTEGER},
+      </if>
+      <if test="layerNumber != null">
+        #{layerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="insectDungWeight != null">
+        #{insectDungWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectWeight != null">
+        #{insectWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.KitchenwasteDischarge">
+    update kitchenwaste_discharge
+    <set>
+      <if test="dischargeDate != null">
+        discharge_date = #{dischargeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeDate != null">
+        income_date = #{incomeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="cabinetNumber != null">
+        cabinet_number = #{cabinetNumber,jdbcType=INTEGER},
+      </if>
+      <if test="layerNumber != null">
+        layer_number = #{layerNumber,jdbcType=INTEGER},
+      </if>
+      <if test="insectDungWeight != null">
+        insect_dung_weight = #{insectDungWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectWeight != null">
+        insect_weight = #{insectWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.KitchenwasteDischarge">
+    update kitchenwaste_discharge
+    set discharge_date = #{dischargeDate,jdbcType=VARCHAR},
+      income_date = #{incomeDate,jdbcType=VARCHAR},
+      cabinet_number = #{cabinetNumber,jdbcType=INTEGER},
+      layer_number = #{layerNumber,jdbcType=INTEGER},
+      insect_dung_weight = #{insectDungWeight,jdbcType=DOUBLE},
+      insect_weight = #{insectWeight,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

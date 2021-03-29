@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.KitchenwasteExportMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.KitchenwasteExport">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="export_date" jdbcType="VARCHAR" property="exportDate" />
+    <result column="insect_export_weight" jdbcType="DOUBLE" property="insectExportWeight" />
+    <result column="insect_dung_export_weight" jdbcType="DOUBLE" property="insectDungExportWeight" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="contacter" jdbcType="VARCHAR" property="contacter" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="yongfa" jdbcType="VARCHAR" property="yongfa" />
+    <result column="feedback" jdbcType="VARCHAR" property="feedback" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, export_date, insect_export_weight, insect_dung_export_weight, company_name, contacter, 
+    telephone, yongfa, feedback, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from kitchenwaste_export
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getlast" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from kitchenwaste_export
+    where DATE(export_date) = DATE(NOW())
+    order by id desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from kitchenwaste_export
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.KitchenwasteExport">
+    insert into kitchenwaste_export (id, export_date, insect_export_weight, 
+      insect_dung_export_weight, company_name, contacter, 
+      telephone, yongfa, feedback, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{exportDate,jdbcType=VARCHAR}, #{insectExportWeight,jdbcType=DOUBLE}, 
+      #{insectDungExportWeight,jdbcType=DOUBLE}, #{companyName,jdbcType=VARCHAR}, #{contacter,jdbcType=VARCHAR}, 
+      #{telephone,jdbcType=VARCHAR}, #{yongfa,jdbcType=VARCHAR}, #{feedback,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.KitchenwasteExport">
+    insert into kitchenwaste_export
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="exportDate != null">
+        export_date,
+      </if>
+      <if test="insectExportWeight != null">
+        insect_export_weight,
+      </if>
+      <if test="insectDungExportWeight != null">
+        insect_dung_export_weight,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="contacter != null">
+        contacter,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="yongfa != null">
+        yongfa,
+      </if>
+      <if test="feedback != null">
+        feedback,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="exportDate != null">
+        #{exportDate,jdbcType=VARCHAR},
+      </if>
+      <if test="insectExportWeight != null">
+        #{insectExportWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectDungExportWeight != null">
+        #{insectDungExportWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="contacter != null">
+        #{contacter,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="yongfa != null">
+        #{yongfa,jdbcType=VARCHAR},
+      </if>
+      <if test="feedback != null">
+        #{feedback,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.KitchenwasteExport">
+    update kitchenwaste_export
+    <set>
+      <if test="exportDate != null">
+        export_date = #{exportDate,jdbcType=VARCHAR},
+      </if>
+      <if test="insectExportWeight != null">
+        insect_export_weight = #{insectExportWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectDungExportWeight != null">
+        insect_dung_export_weight = #{insectDungExportWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="contacter != null">
+        contacter = #{contacter,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="yongfa != null">
+        yongfa = #{yongfa,jdbcType=VARCHAR},
+      </if>
+      <if test="feedback != null">
+        feedback = #{feedback,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.KitchenwasteExport">
+    update kitchenwaste_export
+    set export_date = #{exportDate,jdbcType=VARCHAR},
+      insect_export_weight = #{insectExportWeight,jdbcType=DOUBLE},
+      insect_dung_export_weight = #{insectDungExportWeight,jdbcType=DOUBLE},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      contacter = #{contacter,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      yongfa = #{yongfa,jdbcType=VARCHAR},
+      feedback = #{feedback,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

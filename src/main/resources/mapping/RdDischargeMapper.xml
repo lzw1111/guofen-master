@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.RdDischargeMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.RdDischarge">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="discharge_date" jdbcType="VARCHAR" property="dischargeDate" />
+    <result column="discharge_starttime" jdbcType="VARCHAR" property="dischargeStarttime" />
+    <result column="discharge_endtime" jdbcType="VARCHAR" property="dischargeEndtime" />
+    <result column="sieve_starttime" jdbcType="VARCHAR" property="sieveStarttime" />
+    <result column="sieve_endtime" jdbcType="VARCHAR" property="sieveEndtime" />
+    <result column="insect_separate_starttime" jdbcType="VARCHAR" property="insectSeparateStarttime" />
+    <result column="insect_separate_endtime" jdbcType="VARCHAR" property="insectSeparateEndtime" />
+    <result column="device_name" jdbcType="VARCHAR" property="deviceName" />
+    <result column="batch" jdbcType="VARCHAR" property="batch" />
+    <result column="zubie" jdbcType="INTEGER" property="zubie" />
+    <result column="box_number" jdbcType="INTEGER" property="boxNumber" />
+    <result column="discharge_box_weight" jdbcType="DOUBLE" property="dischargeBoxWeight" />
+    <result column="box_weight" jdbcType="DOUBLE" property="boxWeight" />
+    <result column="insect_impurity_weight" jdbcType="DOUBLE" property="insectImpurityWeight" />
+    <result column="insect_dung_weight" jdbcType="DOUBLE" property="insectDungWeight" />
+    <result column="sieve_weight" jdbcType="DOUBLE" property="sieveWeight" />
+    <result column="surface_fiber_weight" jdbcType="DOUBLE" property="surfaceFiberWeight" />
+    <result column="insect_weight" jdbcType="DOUBLE" property="insectWeight" />
+    <result column="impurity_weight" jdbcType="DOUBLE" property="impurityWeight" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, discharge_date, discharge_starttime, discharge_endtime, sieve_starttime, sieve_endtime, 
+    insect_separate_starttime, insect_separate_endtime, device_name, batch, zubie, box_number, 
+    discharge_box_weight, box_weight, insect_impurity_weight, insect_dung_weight, sieve_weight, 
+    surface_fiber_weight, insect_weight, impurity_weight, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rd_discharge
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getlast" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from rd_discharge
+    where DATE(discharge_date) = DATE(NOW())
+    order by id desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rd_discharge
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.RdDischarge">
+    insert into rd_discharge (id, discharge_date, discharge_starttime, 
+      discharge_endtime, sieve_starttime, sieve_endtime, 
+      insect_separate_starttime, insect_separate_endtime, 
+      device_name, batch, zubie, 
+      box_number, discharge_box_weight, box_weight, 
+      insect_impurity_weight, insect_dung_weight, sieve_weight, 
+      surface_fiber_weight, insect_weight, impurity_weight, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{dischargeDate,jdbcType=VARCHAR}, #{dischargeStarttime,jdbcType=VARCHAR}, 
+      #{dischargeEndtime,jdbcType=VARCHAR}, #{sieveStarttime,jdbcType=VARCHAR}, #{sieveEndtime,jdbcType=VARCHAR}, 
+      #{insectSeparateStarttime,jdbcType=VARCHAR}, #{insectSeparateEndtime,jdbcType=VARCHAR}, 
+      #{deviceName,jdbcType=VARCHAR}, #{batch,jdbcType=VARCHAR}, #{zubie,jdbcType=INTEGER}, 
+      #{boxNumber,jdbcType=INTEGER}, #{dischargeBoxWeight,jdbcType=DOUBLE}, #{boxWeight,jdbcType=DOUBLE}, 
+      #{insectImpurityWeight,jdbcType=DOUBLE}, #{insectDungWeight,jdbcType=DOUBLE}, #{sieveWeight,jdbcType=DOUBLE}, 
+      #{surfaceFiberWeight,jdbcType=DOUBLE}, #{insectWeight,jdbcType=DOUBLE}, #{impurityWeight,jdbcType=DOUBLE}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.RdDischarge">
+    insert into rd_discharge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="dischargeDate != null">
+        discharge_date,
+      </if>
+      <if test="dischargeStarttime != null">
+        discharge_starttime,
+      </if>
+      <if test="dischargeEndtime != null">
+        discharge_endtime,
+      </if>
+      <if test="sieveStarttime != null">
+        sieve_starttime,
+      </if>
+      <if test="sieveEndtime != null">
+        sieve_endtime,
+      </if>
+      <if test="insectSeparateStarttime != null">
+        insect_separate_starttime,
+      </if>
+      <if test="insectSeparateEndtime != null">
+        insect_separate_endtime,
+      </if>
+      <if test="deviceName != null">
+        device_name,
+      </if>
+      <if test="batch != null">
+        batch,
+      </if>
+      <if test="zubie != null">
+        zubie,
+      </if>
+      <if test="boxNumber != null">
+        box_number,
+      </if>
+      <if test="dischargeBoxWeight != null">
+        discharge_box_weight,
+      </if>
+      <if test="boxWeight != null">
+        box_weight,
+      </if>
+      <if test="insectImpurityWeight != null">
+        insect_impurity_weight,
+      </if>
+      <if test="insectDungWeight != null">
+        insect_dung_weight,
+      </if>
+      <if test="sieveWeight != null">
+        sieve_weight,
+      </if>
+      <if test="surfaceFiberWeight != null">
+        surface_fiber_weight,
+      </if>
+      <if test="insectWeight != null">
+        insect_weight,
+      </if>
+      <if test="impurityWeight != null">
+        impurity_weight,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="dischargeDate != null">
+        #{dischargeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="dischargeStarttime != null">
+        #{dischargeStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="dischargeEndtime != null">
+        #{dischargeEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="sieveStarttime != null">
+        #{sieveStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="sieveEndtime != null">
+        #{sieveEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="insectSeparateStarttime != null">
+        #{insectSeparateStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="insectSeparateEndtime != null">
+        #{insectSeparateEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="batch != null">
+        #{batch,jdbcType=VARCHAR},
+      </if>
+      <if test="zubie != null">
+        #{zubie,jdbcType=INTEGER},
+      </if>
+      <if test="boxNumber != null">
+        #{boxNumber,jdbcType=INTEGER},
+      </if>
+      <if test="dischargeBoxWeight != null">
+        #{dischargeBoxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="boxWeight != null">
+        #{boxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectImpurityWeight != null">
+        #{insectImpurityWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectDungWeight != null">
+        #{insectDungWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="sieveWeight != null">
+        #{sieveWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="surfaceFiberWeight != null">
+        #{surfaceFiberWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectWeight != null">
+        #{insectWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="impurityWeight != null">
+        #{impurityWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.RdDischarge">
+    update rd_discharge
+    <set>
+      <if test="dischargeDate != null">
+        discharge_date = #{dischargeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="dischargeStarttime != null">
+        discharge_starttime = #{dischargeStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="dischargeEndtime != null">
+        discharge_endtime = #{dischargeEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="sieveStarttime != null">
+        sieve_starttime = #{sieveStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="sieveEndtime != null">
+        sieve_endtime = #{sieveEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="insectSeparateStarttime != null">
+        insect_separate_starttime = #{insectSeparateStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="insectSeparateEndtime != null">
+        insect_separate_endtime = #{insectSeparateEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        device_name = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="batch != null">
+        batch = #{batch,jdbcType=VARCHAR},
+      </if>
+      <if test="zubie != null">
+        zubie = #{zubie,jdbcType=INTEGER},
+      </if>
+      <if test="boxNumber != null">
+        box_number = #{boxNumber,jdbcType=INTEGER},
+      </if>
+      <if test="dischargeBoxWeight != null">
+        discharge_box_weight = #{dischargeBoxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="boxWeight != null">
+        box_weight = #{boxWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectImpurityWeight != null">
+        insect_impurity_weight = #{insectImpurityWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectDungWeight != null">
+        insect_dung_weight = #{insectDungWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="sieveWeight != null">
+        sieve_weight = #{sieveWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="surfaceFiberWeight != null">
+        surface_fiber_weight = #{surfaceFiberWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="insectWeight != null">
+        insect_weight = #{insectWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="impurityWeight != null">
+        impurity_weight = #{impurityWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.RdDischarge">
+    update rd_discharge
+    set discharge_date = #{dischargeDate,jdbcType=VARCHAR},
+      discharge_starttime = #{dischargeStarttime,jdbcType=VARCHAR},
+      discharge_endtime = #{dischargeEndtime,jdbcType=VARCHAR},
+      sieve_starttime = #{sieveStarttime,jdbcType=VARCHAR},
+      sieve_endtime = #{sieveEndtime,jdbcType=VARCHAR},
+      insect_separate_starttime = #{insectSeparateStarttime,jdbcType=VARCHAR},
+      insect_separate_endtime = #{insectSeparateEndtime,jdbcType=VARCHAR},
+      device_name = #{deviceName,jdbcType=VARCHAR},
+      batch = #{batch,jdbcType=VARCHAR},
+      zubie = #{zubie,jdbcType=INTEGER},
+      box_number = #{boxNumber,jdbcType=INTEGER},
+      discharge_box_weight = #{dischargeBoxWeight,jdbcType=DOUBLE},
+      box_weight = #{boxWeight,jdbcType=DOUBLE},
+      insect_impurity_weight = #{insectImpurityWeight,jdbcType=DOUBLE},
+      insect_dung_weight = #{insectDungWeight,jdbcType=DOUBLE},
+      sieve_weight = #{sieveWeight,jdbcType=DOUBLE},
+      surface_fiber_weight = #{surfaceFiberWeight,jdbcType=DOUBLE},
+      insect_weight = #{insectWeight,jdbcType=DOUBLE},
+      impurity_weight = #{impurityWeight,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

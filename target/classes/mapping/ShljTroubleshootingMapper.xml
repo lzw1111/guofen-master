@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.ShljTroubleshootingMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.ShljTroubleshooting">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="person_in_charge" jdbcType="VARCHAR" property="personInCharge" />
+    <result column="system_name" jdbcType="VARCHAR" property="systemName" />
+    <result column="equipment_name" jdbcType="VARCHAR" property="equipmentName" />
+    <result column="stage" jdbcType="VARCHAR" property="stage" />
+    <result column="recording_person" jdbcType="VARCHAR" property="recordingPerson" />
+    <result column="time_of_failure" jdbcType="VARCHAR" property="timeOfFailure" />
+    <result column="fault_description" jdbcType="VARCHAR" property="faultDescription" />
+    <result column="fault_reasion" jdbcType="VARCHAR" property="faultReasion" />
+    <result column="fault_repair_method" jdbcType="VARCHAR" property="faultRepairMethod" />
+    <result column="repair_start_time" jdbcType="VARCHAR" property="repairStartTime" />
+    <result column="repair_end_time" jdbcType="VARCHAR" property="repairEndTime" />
+    <result column="repair_person" jdbcType="VARCHAR" property="repairPerson" />
+    <result column="method_proposer" jdbcType="VARCHAR" property="methodProposer" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, person_in_charge, system_name, equipment_name, stage, recording_person, time_of_failure,
+    fault_description, fault_reasion, fault_repair_method, repair_start_time, repair_end_time, 
+    repair_person, method_proposer
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shlj_troubleshooting
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getLast" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_troubleshooting
+    where DATE(DATE) = DATE(NOW())
+    order by date desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shlj_troubleshooting
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.ShljTroubleshooting">
+    insert into shlj_troubleshooting (id, date, person_in_charge, system_name,
+      equipment_name, stage, recording_person, 
+      time_of_failure, fault_description, fault_reasion, 
+      fault_repair_method, repair_start_time, repair_end_time, 
+      repair_person, method_proposer)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{personInCharge,jdbcType=VARCHAR}, #{systemName,jdbcType=VARCHAR},
+      #{equipmentName,jdbcType=VARCHAR}, #{stage,jdbcType=VARCHAR}, #{recordingPerson,jdbcType=VARCHAR}, 
+      #{timeOfFailure,jdbcType=VARCHAR}, #{faultDescription,jdbcType=VARCHAR}, #{faultReasion,jdbcType=VARCHAR}, 
+      #{faultRepairMethod,jdbcType=VARCHAR}, #{repairStartTime,jdbcType=VARCHAR}, #{repairEndTime,jdbcType=VARCHAR}, 
+      #{repairPerson,jdbcType=VARCHAR}, #{methodProposer,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.ShljTroubleshooting">
+    insert into shlj_troubleshooting
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="personInCharge != null">
+        person_in_charge,
+      </if>
+      <if test="systemName != null">
+        system_name,
+      </if>
+      <if test="equipmentName != null">
+        equipment_name,
+      </if>
+      <if test="stage != null">
+        stage,
+      </if>
+      <if test="recordingPerson != null">
+        recording_person,
+      </if>
+      <if test="timeOfFailure != null">
+        time_of_failure,
+      </if>
+      <if test="faultDescription != null">
+        fault_description,
+      </if>
+      <if test="faultReasion != null">
+        fault_reasion,
+      </if>
+      <if test="faultRepairMethod != null">
+        fault_repair_method,
+      </if>
+      <if test="repairStartTime != null">
+        repair_start_time,
+      </if>
+      <if test="repairEndTime != null">
+        repair_end_time,
+      </if>
+      <if test="repairPerson != null">
+        repair_person,
+      </if>
+      <if test="methodProposer != null">
+        method_proposer,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="personInCharge != null">
+        #{personInCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="systemName != null">
+        #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentName != null">
+        #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="stage != null">
+        #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="timeOfFailure != null">
+        #{timeOfFailure,jdbcType=VARCHAR},
+      </if>
+      <if test="faultDescription != null">
+        #{faultDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="faultReasion != null">
+        #{faultReasion,jdbcType=VARCHAR},
+      </if>
+      <if test="faultRepairMethod != null">
+        #{faultRepairMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="repairStartTime != null">
+        #{repairStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="repairEndTime != null">
+        #{repairEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="repairPerson != null">
+        #{repairPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="methodProposer != null">
+        #{methodProposer,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.ShljTroubleshooting">
+    update shlj_troubleshooting
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="personInCharge != null">
+        person_in_charge = #{personInCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="systemName != null">
+        system_name = #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentName != null">
+        equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="stage != null">
+        stage = #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="timeOfFailure != null">
+        time_of_failure = #{timeOfFailure,jdbcType=VARCHAR},
+      </if>
+      <if test="faultDescription != null">
+        fault_description = #{faultDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="faultReasion != null">
+        fault_reasion = #{faultReasion,jdbcType=VARCHAR},
+      </if>
+      <if test="faultRepairMethod != null">
+        fault_repair_method = #{faultRepairMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="repairStartTime != null">
+        repair_start_time = #{repairStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="repairEndTime != null">
+        repair_end_time = #{repairEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="repairPerson != null">
+        repair_person = #{repairPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="methodProposer != null">
+        method_proposer = #{methodProposer,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.ShljTroubleshooting">
+    update shlj_troubleshooting
+    set person_in_charge = #{personInCharge,jdbcType=VARCHAR},
+      system_name = #{systemName,jdbcType=VARCHAR},
+      equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      stage = #{stage,jdbcType=VARCHAR},
+      recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      time_of_failure = #{timeOfFailure,jdbcType=VARCHAR},
+      fault_description = #{faultDescription,jdbcType=VARCHAR},
+      fault_reasion = #{faultReasion,jdbcType=VARCHAR},
+      fault_repair_method = #{faultRepairMethod,jdbcType=VARCHAR},
+      repair_start_time = #{repairStartTime,jdbcType=VARCHAR},
+      repair_end_time = #{repairEndTime,jdbcType=VARCHAR},
+      repair_person = #{repairPerson,jdbcType=VARCHAR},
+      method_proposer = #{methodProposer,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

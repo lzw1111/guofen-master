@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqWaterProductionEquipmentMaintenanceDayMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceDay">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="running_status_submarine_pump" jdbcType="VARCHAR" property="runningStatusSubmarinePump" />
+    <result column="running_status_blender" jdbcType="VARCHAR" property="runningStatusBlender" />
+    <result column="o_noise_fan_1" jdbcType="VARCHAR" property="oNoiseFan1" />
+    <result column="o_noise_fan_2" jdbcType="VARCHAR" property="oNoiseFan2" />
+    <result column="membrane_noise_fan_1" jdbcType="VARCHAR" property="membraneNoiseFan1" />
+    <result column="membrane_noise_fan_2" jdbcType="VARCHAR" property="membraneNoiseFan2" />
+    <result column="membrane_noise_fan_3" jdbcType="VARCHAR" property="membraneNoiseFan3" />
+    <result column="running_status_reflux_pump" jdbcType="VARCHAR" property="runningStatusRefluxPump" />
+    <result column="o_surface_electronic_control_system" jdbcType="VARCHAR" property="oSurfaceElectronicControlSystem" />
+    <result column="membrane_surface_electronic_control_system" jdbcType="VARCHAR" property="membraneSurfaceElectronicControlSystem" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="examiner" jdbcType="VARCHAR" property="examiner" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, running_status_submarine_pump, running_status_blender, o_noise_fan_1, o_noise_fan_2, 
+    membrane_noise_fan_1, membrane_noise_fan_2, membrane_noise_fan_3, running_status_reflux_pump, 
+    o_surface_electronic_control_system, membrane_surface_electronic_control_system, 
+    operator, examiner
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_water_production_equipment_maintenance_day
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_water_production_equipment_maintenance_day
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceDay">
+    insert into sjq_water_production_equipment_maintenance_day (id, date, running_status_submarine_pump, 
+      running_status_blender, o_noise_fan_1, o_noise_fan_2, 
+      membrane_noise_fan_1, membrane_noise_fan_2, membrane_noise_fan_3, 
+      running_status_reflux_pump, o_surface_electronic_control_system, 
+      membrane_surface_electronic_control_system, operator, 
+      examiner)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{runningStatusSubmarinePump,jdbcType=VARCHAR}, 
+      #{runningStatusBlender,jdbcType=VARCHAR}, #{oNoiseFan1,jdbcType=VARCHAR}, #{oNoiseFan2,jdbcType=VARCHAR}, 
+      #{membraneNoiseFan1,jdbcType=VARCHAR}, #{membraneNoiseFan2,jdbcType=VARCHAR}, #{membraneNoiseFan3,jdbcType=VARCHAR}, 
+      #{runningStatusRefluxPump,jdbcType=VARCHAR}, #{oSurfaceElectronicControlSystem,jdbcType=VARCHAR}, 
+      #{membraneSurfaceElectronicControlSystem,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, 
+      #{examiner,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceDay">
+    insert into sjq_water_production_equipment_maintenance_day
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="runningStatusSubmarinePump != null">
+        running_status_submarine_pump,
+      </if>
+      <if test="runningStatusBlender != null">
+        running_status_blender,
+      </if>
+      <if test="oNoiseFan1 != null">
+        o_noise_fan_1,
+      </if>
+      <if test="oNoiseFan2 != null">
+        o_noise_fan_2,
+      </if>
+      <if test="membraneNoiseFan1 != null">
+        membrane_noise_fan_1,
+      </if>
+      <if test="membraneNoiseFan2 != null">
+        membrane_noise_fan_2,
+      </if>
+      <if test="membraneNoiseFan3 != null">
+        membrane_noise_fan_3,
+      </if>
+      <if test="runningStatusRefluxPump != null">
+        running_status_reflux_pump,
+      </if>
+      <if test="oSurfaceElectronicControlSystem != null">
+        o_surface_electronic_control_system,
+      </if>
+      <if test="membraneSurfaceElectronicControlSystem != null">
+        membrane_surface_electronic_control_system,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="examiner != null">
+        examiner,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="runningStatusSubmarinePump != null">
+        #{runningStatusSubmarinePump,jdbcType=VARCHAR},
+      </if>
+      <if test="runningStatusBlender != null">
+        #{runningStatusBlender,jdbcType=VARCHAR},
+      </if>
+      <if test="oNoiseFan1 != null">
+        #{oNoiseFan1,jdbcType=VARCHAR},
+      </if>
+      <if test="oNoiseFan2 != null">
+        #{oNoiseFan2,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneNoiseFan1 != null">
+        #{membraneNoiseFan1,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneNoiseFan2 != null">
+        #{membraneNoiseFan2,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneNoiseFan3 != null">
+        #{membraneNoiseFan3,jdbcType=VARCHAR},
+      </if>
+      <if test="runningStatusRefluxPump != null">
+        #{runningStatusRefluxPump,jdbcType=VARCHAR},
+      </if>
+      <if test="oSurfaceElectronicControlSystem != null">
+        #{oSurfaceElectronicControlSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneSurfaceElectronicControlSystem != null">
+        #{membraneSurfaceElectronicControlSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="examiner != null">
+        #{examiner,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceDay">
+    update sjq_water_production_equipment_maintenance_day
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="runningStatusSubmarinePump != null">
+        running_status_submarine_pump = #{runningStatusSubmarinePump,jdbcType=VARCHAR},
+      </if>
+      <if test="runningStatusBlender != null">
+        running_status_blender = #{runningStatusBlender,jdbcType=VARCHAR},
+      </if>
+      <if test="oNoiseFan1 != null">
+        o_noise_fan_1 = #{oNoiseFan1,jdbcType=VARCHAR},
+      </if>
+      <if test="oNoiseFan2 != null">
+        o_noise_fan_2 = #{oNoiseFan2,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneNoiseFan1 != null">
+        membrane_noise_fan_1 = #{membraneNoiseFan1,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneNoiseFan2 != null">
+        membrane_noise_fan_2 = #{membraneNoiseFan2,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneNoiseFan3 != null">
+        membrane_noise_fan_3 = #{membraneNoiseFan3,jdbcType=VARCHAR},
+      </if>
+      <if test="runningStatusRefluxPump != null">
+        running_status_reflux_pump = #{runningStatusRefluxPump,jdbcType=VARCHAR},
+      </if>
+      <if test="oSurfaceElectronicControlSystem != null">
+        o_surface_electronic_control_system = #{oSurfaceElectronicControlSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="membraneSurfaceElectronicControlSystem != null">
+        membrane_surface_electronic_control_system = #{membraneSurfaceElectronicControlSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="examiner != null">
+        examiner = #{examiner,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqWaterProductionEquipmentMaintenanceDay">
+    update sjq_water_production_equipment_maintenance_day
+    set date = #{date,jdbcType=VARCHAR},
+      running_status_submarine_pump = #{runningStatusSubmarinePump,jdbcType=VARCHAR},
+      running_status_blender = #{runningStatusBlender,jdbcType=VARCHAR},
+      o_noise_fan_1 = #{oNoiseFan1,jdbcType=VARCHAR},
+      o_noise_fan_2 = #{oNoiseFan2,jdbcType=VARCHAR},
+      membrane_noise_fan_1 = #{membraneNoiseFan1,jdbcType=VARCHAR},
+      membrane_noise_fan_2 = #{membraneNoiseFan2,jdbcType=VARCHAR},
+      membrane_noise_fan_3 = #{membraneNoiseFan3,jdbcType=VARCHAR},
+      running_status_reflux_pump = #{runningStatusRefluxPump,jdbcType=VARCHAR},
+      o_surface_electronic_control_system = #{oSurfaceElectronicControlSystem,jdbcType=VARCHAR},
+      membrane_surface_electronic_control_system = #{membraneSurfaceElectronicControlSystem,jdbcType=VARCHAR},
+      operator = #{operator,jdbcType=VARCHAR},
+      examiner = #{examiner,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

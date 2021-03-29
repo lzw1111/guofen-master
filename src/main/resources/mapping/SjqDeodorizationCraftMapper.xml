@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqDeodorizationCraftMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqDeodorizationCraft">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="dung_weight" jdbcType="DOUBLE" property="dungWeight" />
+    <result column="solidliquid_weight" jdbcType="DOUBLE" property="solidliquidWeight" />
+    <result column="flocculation_weight" jdbcType="DOUBLE" property="flocculationWeight" />
+    <result column="compost_weight" jdbcType="DOUBLE" property="compostWeight" />
+    <result column="outdoor_weight" jdbcType="DOUBLE" property="outdoorWeight" />
+    <result column="enzyme_weight" jdbcType="DOUBLE" property="enzymeWeight" />
+    <result column="others_weight" jdbcType="DOUBLE" property="othersWeight" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, dung_weight, solidliquid_weight, flocculation_weight, compost_weight, outdoor_weight, 
+    enzyme_weight, others_weight, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_deodorization_craft
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_deodorization_craft
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqDeodorizationCraft">
+    insert into sjq_deodorization_craft (id, date, dung_weight, 
+      solidliquid_weight, flocculation_weight, compost_weight, 
+      outdoor_weight, enzyme_weight, others_weight, 
+      remarks)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{dungWeight,jdbcType=DOUBLE}, 
+      #{solidliquidWeight,jdbcType=DOUBLE}, #{flocculationWeight,jdbcType=DOUBLE}, #{compostWeight,jdbcType=DOUBLE}, 
+      #{outdoorWeight,jdbcType=DOUBLE}, #{enzymeWeight,jdbcType=DOUBLE}, #{othersWeight,jdbcType=DOUBLE}, 
+      #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqDeodorizationCraft">
+    insert into sjq_deodorization_craft
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="dungWeight != null">
+        dung_weight,
+      </if>
+      <if test="solidliquidWeight != null">
+        solidliquid_weight,
+      </if>
+      <if test="flocculationWeight != null">
+        flocculation_weight,
+      </if>
+      <if test="compostWeight != null">
+        compost_weight,
+      </if>
+      <if test="outdoorWeight != null">
+        outdoor_weight,
+      </if>
+      <if test="enzymeWeight != null">
+        enzyme_weight,
+      </if>
+      <if test="othersWeight != null">
+        others_weight,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="dungWeight != null">
+        #{dungWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="solidliquidWeight != null">
+        #{solidliquidWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="flocculationWeight != null">
+        #{flocculationWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="compostWeight != null">
+        #{compostWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="outdoorWeight != null">
+        #{outdoorWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="enzymeWeight != null">
+        #{enzymeWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="othersWeight != null">
+        #{othersWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqDeodorizationCraft">
+    update sjq_deodorization_craft
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="dungWeight != null">
+        dung_weight = #{dungWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="solidliquidWeight != null">
+        solidliquid_weight = #{solidliquidWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="flocculationWeight != null">
+        flocculation_weight = #{flocculationWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="compostWeight != null">
+        compost_weight = #{compostWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="outdoorWeight != null">
+        outdoor_weight = #{outdoorWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="enzymeWeight != null">
+        enzyme_weight = #{enzymeWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="othersWeight != null">
+        others_weight = #{othersWeight,jdbcType=DOUBLE},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqDeodorizationCraft">
+    update sjq_deodorization_craft
+    set date = #{date,jdbcType=VARCHAR},
+      dung_weight = #{dungWeight,jdbcType=DOUBLE},
+      solidliquid_weight = #{solidliquidWeight,jdbcType=DOUBLE},
+      flocculation_weight = #{flocculationWeight,jdbcType=DOUBLE},
+      compost_weight = #{compostWeight,jdbcType=DOUBLE},
+      outdoor_weight = #{outdoorWeight,jdbcType=DOUBLE},
+      enzyme_weight = #{enzymeWeight,jdbcType=DOUBLE},
+      others_weight = #{othersWeight,jdbcType=DOUBLE},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findLast" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sjq_deodorization_craft
+    where id=(select max(id) from sjq_deodorization_craft)
+  </select>
+</mapper>

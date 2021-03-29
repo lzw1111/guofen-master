@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqSolidliquidProduceFaultMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqSolidliquidProduceFault">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fill_time" jdbcType="VARCHAR" property="fillTime" />
+    <result column="equipment_name" jdbcType="VARCHAR" property="equipmentName" />
+    <result column="fault_time" jdbcType="VARCHAR" property="faultTime" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="fault_content" jdbcType="VARCHAR" property="faultContent" />
+    <result column="service_time_start" jdbcType="VARCHAR" property="serviceTimeStart" />
+    <result column="service_time_end" jdbcType="VARCHAR" property="serviceTimeEnd" />
+    <result column="serviceman_in_charge" jdbcType="VARCHAR" property="servicemanInCharge" />
+    <result column="serviceman" jdbcType="VARCHAR" property="serviceman" />
+    <result column="fault_reason" jdbcType="VARCHAR" property="faultReason" />
+    <result column="service_method" jdbcType="VARCHAR" property="serviceMethod" />
+    <result column="proposer" jdbcType="VARCHAR" property="proposer" />
+    <result column="recover_time" jdbcType="VARCHAR" property="recoverTime" />
+    <result column="inspector" jdbcType="VARCHAR" property="inspector" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, fill_time, equipment_name, fault_time, operator, fault_content, service_time_start, 
+    service_time_end, serviceman_in_charge, serviceman, fault_reason, service_method, 
+    proposer, recover_time, inspector
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_solidliquid_produce_fault
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getLast" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sjq_solidliquid_produce_fault
+    where DATE(fault_time) = DATE(NOW())
+    order by id desc
+    limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_solidliquid_produce_fault
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqSolidliquidProduceFault">
+    insert into sjq_solidliquid_produce_fault (id, fill_time, equipment_name, 
+      fault_time, operator, fault_content, 
+      service_time_start, service_time_end, serviceman_in_charge, 
+      serviceman, fault_reason, service_method, 
+      proposer, recover_time, inspector
+      )
+    values (#{id,jdbcType=INTEGER}, #{fillTime,jdbcType=VARCHAR}, #{equipmentName,jdbcType=VARCHAR}, 
+      #{faultTime,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, #{faultContent,jdbcType=VARCHAR}, 
+      #{serviceTimeStart,jdbcType=VARCHAR}, #{serviceTimeEnd,jdbcType=VARCHAR}, #{servicemanInCharge,jdbcType=VARCHAR}, 
+      #{serviceman,jdbcType=VARCHAR}, #{faultReason,jdbcType=VARCHAR}, #{serviceMethod,jdbcType=VARCHAR}, 
+      #{proposer,jdbcType=VARCHAR}, #{recoverTime,jdbcType=VARCHAR}, #{inspector,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqSolidliquidProduceFault">
+    insert into sjq_solidliquid_produce_fault
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="fillTime != null">
+        fill_time,
+      </if>
+      <if test="equipmentName != null">
+        equipment_name,
+      </if>
+      <if test="faultTime != null">
+        fault_time,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="faultContent != null">
+        fault_content,
+      </if>
+      <if test="serviceTimeStart != null">
+        service_time_start,
+      </if>
+      <if test="serviceTimeEnd != null">
+        service_time_end,
+      </if>
+      <if test="servicemanInCharge != null">
+        serviceman_in_charge,
+      </if>
+      <if test="serviceman != null">
+        serviceman,
+      </if>
+      <if test="faultReason != null">
+        fault_reason,
+      </if>
+      <if test="serviceMethod != null">
+        service_method,
+      </if>
+      <if test="proposer != null">
+        proposer,
+      </if>
+      <if test="recoverTime != null">
+        recover_time,
+      </if>
+      <if test="inspector != null">
+        inspector,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fillTime != null">
+        #{fillTime,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentName != null">
+        #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="faultTime != null">
+        #{faultTime,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="faultContent != null">
+        #{faultContent,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceTimeStart != null">
+        #{serviceTimeStart,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceTimeEnd != null">
+        #{serviceTimeEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="servicemanInCharge != null">
+        #{servicemanInCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceman != null">
+        #{serviceman,jdbcType=VARCHAR},
+      </if>
+      <if test="faultReason != null">
+        #{faultReason,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceMethod != null">
+        #{serviceMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null">
+        #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="recoverTime != null">
+        #{recoverTime,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        #{inspector,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqSolidliquidProduceFault">
+    update sjq_solidliquid_produce_fault
+    <set>
+      <if test="fillTime != null">
+        fill_time = #{fillTime,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentName != null">
+        equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="faultTime != null">
+        fault_time = #{faultTime,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="faultContent != null">
+        fault_content = #{faultContent,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceTimeStart != null">
+        service_time_start = #{serviceTimeStart,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceTimeEnd != null">
+        service_time_end = #{serviceTimeEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="servicemanInCharge != null">
+        serviceman_in_charge = #{servicemanInCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceman != null">
+        serviceman = #{serviceman,jdbcType=VARCHAR},
+      </if>
+      <if test="faultReason != null">
+        fault_reason = #{faultReason,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceMethod != null">
+        service_method = #{serviceMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null">
+        proposer = #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="recoverTime != null">
+        recover_time = #{recoverTime,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        inspector = #{inspector,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqSolidliquidProduceFault">
+    update sjq_solidliquid_produce_fault
+    set fill_time = #{fillTime,jdbcType=VARCHAR},
+      equipment_name = #{equipmentName,jdbcType=VARCHAR},
+      fault_time = #{faultTime,jdbcType=VARCHAR},
+      operator = #{operator,jdbcType=VARCHAR},
+      fault_content = #{faultContent,jdbcType=VARCHAR},
+      service_time_start = #{serviceTimeStart,jdbcType=VARCHAR},
+      service_time_end = #{serviceTimeEnd,jdbcType=VARCHAR},
+      serviceman_in_charge = #{servicemanInCharge,jdbcType=VARCHAR},
+      serviceman = #{serviceman,jdbcType=VARCHAR},
+      fault_reason = #{faultReason,jdbcType=VARCHAR},
+      service_method = #{serviceMethod,jdbcType=VARCHAR},
+      proposer = #{proposer,jdbcType=VARCHAR},
+      recover_time = #{recoverTime,jdbcType=VARCHAR},
+      inspector = #{inspector,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

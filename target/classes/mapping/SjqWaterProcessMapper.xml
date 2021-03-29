@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.SjqWaterProcessMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.SjqWaterProcess">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="flow_meter_reading_1" jdbcType="DOUBLE" property="flowMeterReading1" />
+    <result column="flow_meter_reading_2" jdbcType="DOUBLE" property="flowMeterReading2" />
+    <result column="flow_meter_reading_total" jdbcType="DOUBLE" property="flowMeterReadingTotal" />
+    <result column="o_level" jdbcType="DOUBLE" property="oLevel" />
+    <result column="soil_discharging_start_time" jdbcType="VARCHAR" property="soilDischargingStartTime" />
+    <result column="soil_discharging_end_time" jdbcType="VARCHAR" property="soilDischargingEndTime" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, time, flow_meter_reading_1, flow_meter_reading_2, flow_meter_reading_total, 
+    o_level, soil_discharging_start_time, soil_discharging_end_time, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sjq_water_process
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sjq_water_process
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.SjqWaterProcess">
+    insert into sjq_water_process (id, date, time, 
+      flow_meter_reading_1, flow_meter_reading_2, flow_meter_reading_total, 
+      o_level, soil_discharging_start_time, soil_discharging_end_time, 
+      remarks)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, 
+      #{flowMeterReading1,jdbcType=DOUBLE}, #{flowMeterReading2,jdbcType=DOUBLE}, #{flowMeterReadingTotal,jdbcType=DOUBLE}, 
+      #{oLevel,jdbcType=DOUBLE}, #{soilDischargingStartTime,jdbcType=VARCHAR}, #{soilDischargingEndTime,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.SjqWaterProcess">
+    insert into sjq_water_process
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="flowMeterReading1 != null">
+        flow_meter_reading_1,
+      </if>
+      <if test="flowMeterReading2 != null">
+        flow_meter_reading_2,
+      </if>
+      <if test="flowMeterReadingTotal != null">
+        flow_meter_reading_total,
+      </if>
+      <if test="oLevel != null">
+        o_level,
+      </if>
+      <if test="soilDischargingStartTime != null">
+        soil_discharging_start_time,
+      </if>
+      <if test="soilDischargingEndTime != null">
+        soil_discharging_end_time,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="flowMeterReading1 != null">
+        #{flowMeterReading1,jdbcType=DOUBLE},
+      </if>
+      <if test="flowMeterReading2 != null">
+        #{flowMeterReading2,jdbcType=DOUBLE},
+      </if>
+      <if test="flowMeterReadingTotal != null">
+        #{flowMeterReadingTotal,jdbcType=DOUBLE},
+      </if>
+      <if test="oLevel != null">
+        #{oLevel,jdbcType=DOUBLE},
+      </if>
+      <if test="soilDischargingStartTime != null">
+        #{soilDischargingStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="soilDischargingEndTime != null">
+        #{soilDischargingEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.SjqWaterProcess">
+    update sjq_water_process
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="flowMeterReading1 != null">
+        flow_meter_reading_1 = #{flowMeterReading1,jdbcType=DOUBLE},
+      </if>
+      <if test="flowMeterReading2 != null">
+        flow_meter_reading_2 = #{flowMeterReading2,jdbcType=DOUBLE},
+      </if>
+      <if test="flowMeterReadingTotal != null">
+        flow_meter_reading_total = #{flowMeterReadingTotal,jdbcType=DOUBLE},
+      </if>
+      <if test="oLevel != null">
+        o_level = #{oLevel,jdbcType=DOUBLE},
+      </if>
+      <if test="soilDischargingStartTime != null">
+        soil_discharging_start_time = #{soilDischargingStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="soilDischargingEndTime != null">
+        soil_discharging_end_time = #{soilDischargingEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.SjqWaterProcess">
+    update sjq_water_process
+    set date = #{date,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      flow_meter_reading_1 = #{flowMeterReading1,jdbcType=DOUBLE},
+      flow_meter_reading_2 = #{flowMeterReading2,jdbcType=DOUBLE},
+      flow_meter_reading_total = #{flowMeterReadingTotal,jdbcType=DOUBLE},
+      o_level = #{oLevel,jdbcType=DOUBLE},
+      soil_discharging_start_time = #{soilDischargingStartTime,jdbcType=VARCHAR},
+      soil_discharging_end_time = #{soilDischargingEndTime,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

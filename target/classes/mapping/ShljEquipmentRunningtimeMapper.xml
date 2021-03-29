@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.ShljEquipmentRunningtimeMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.ShljEquipmentRunningtime">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="startup_time" jdbcType="VARCHAR" property="startupTime" />
+    <result column="shutdown_time" jdbcType="VARCHAR" property="shutdownTime" />
+    <result column="shutdown_reasion" jdbcType="VARCHAR" property="shutdownReasion" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, startup_time, shutdown_time, shutdown_reasion
+  </sql>
+  <select id="selectLast" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_equipment_runningtime
+    where id=(select max(id) from shlj_equipment_runningtime)
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shlj_equipment_runningtime
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shlj_equipment_runningtime
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.ShljEquipmentRunningtime">
+    insert into shlj_equipment_runningtime (id, date, startup_time, 
+      shutdown_time, shutdown_reasion)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{startupTime,jdbcType=VARCHAR}, 
+      #{shutdownTime,jdbcType=VARCHAR}, #{shutdownReasion,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.ShljEquipmentRunningtime">
+    insert into shlj_equipment_runningtime
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="startupTime != null">
+        startup_time,
+      </if>
+      <if test="shutdownTime != null">
+        shutdown_time,
+      </if>
+      <if test="shutdownReasion != null">
+        shutdown_reasion,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="startupTime != null">
+        #{startupTime,jdbcType=VARCHAR},
+      </if>
+      <if test="shutdownTime != null">
+        #{shutdownTime,jdbcType=VARCHAR},
+      </if>
+      <if test="shutdownReasion != null">
+        #{shutdownReasion,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.ShljEquipmentRunningtime">
+    update shlj_equipment_runningtime
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="startupTime != null">
+        startup_time = #{startupTime,jdbcType=VARCHAR},
+      </if>
+      <if test="shutdownTime != null">
+        shutdown_time = #{shutdownTime,jdbcType=VARCHAR},
+      </if>
+      <if test="shutdownReasion != null">
+        shutdown_reasion = #{shutdownReasion,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.ShljEquipmentRunningtime">
+    update shlj_equipment_runningtime
+    set date = #{date,jdbcType=VARCHAR},
+      startup_time = #{startupTime,jdbcType=VARCHAR},
+      shutdown_time = #{shutdownTime,jdbcType=VARCHAR},
+      shutdown_reasion = #{shutdownReasion,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findLast" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_equipment_runningtime
+    where id=(select max(id) from shlj_equipment_runningtime)
+  </select>
+</mapper>

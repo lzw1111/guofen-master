@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.ShljDeodorantSprayingtimeMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.ShljDeodorantSprayingtime">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="week" jdbcType="VARCHAR" property="week" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="signature" jdbcType="VARCHAR" property="signature" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, week, time, signature
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shlj_deodorant_sprayingtime
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shlj_deodorant_sprayingtime
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.ShljDeodorantSprayingtime">
+    insert into shlj_deodorant_sprayingtime (id, date, week, 
+      time, signature)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{week,jdbcType=VARCHAR}, 
+      #{time,jdbcType=VARCHAR}, #{signature,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.ShljDeodorantSprayingtime">
+    insert into shlj_deodorant_sprayingtime
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="week != null">
+        week,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="signature != null">
+        signature,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="week != null">
+        #{week,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null">
+        #{signature,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.ShljDeodorantSprayingtime">
+    update shlj_deodorant_sprayingtime
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="week != null">
+        week = #{week,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null">
+        signature = #{signature,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.ShljDeodorantSprayingtime">
+    update shlj_deodorant_sprayingtime
+    set date = #{date,jdbcType=VARCHAR},
+      week = #{week,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      signature = #{signature,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findLast" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_deodorant_sprayingtime
+    where id=(select max(id) from shlj_deodorant_sprayingtime)
+  </select>
+</mapper>

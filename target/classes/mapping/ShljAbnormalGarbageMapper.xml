@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.ShljAbnormalGarbageMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.ShljAbnormalGarbage">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="wagon_number" jdbcType="VARCHAR" property="wagonNumber" />
+    <result column="garbage_source" jdbcType="VARCHAR" property="garbageSource" />
+    <result column="garbage_type" jdbcType="VARCHAR" property="garbageType" />
+    <result column="garbage_number" jdbcType="INTEGER" property="garbageNumber" />
+    <result column="garbage_unit" jdbcType="VARCHAR" property="garbageUnit" />
+    <result column="recording_person" jdbcType="VARCHAR" property="recordingPerson" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, wagon_number, garbage_source, garbage_type, garbage_number, garbage_unit, 
+    recording_person, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shlj_abnormal_garbage
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shlj_abnormal_garbage
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.ShljAbnormalGarbage">
+    insert into shlj_abnormal_garbage (id, date, wagon_number,
+      garbage_source, garbage_type, garbage_number,
+      garbage_unit, recording_person, remarks
+      )
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{wagonNumber,jdbcType=VARCHAR},
+      #{garbageSource,jdbcType=VARCHAR}, #{garbageType,jdbcType=VARCHAR}, #{garbageNumber,jdbcType=INTEGER},
+      #{garbageUnit,jdbcType=VARCHAR}, #{recordingPerson,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}
+      )
+  </insert>
+<!--  <insert id="insert" parameterType="com.guofen.pojo.ShljAbnormalGarbage">-->
+<!--    insert into shlj_abnormal_garbage (date, wagon_number,-->
+<!--      garbage_source, garbage_type, garbage_number, remarks-->
+<!--      )-->
+<!--    values (#{date,jdbcType=VARCHAR}, #{wagonNumber,jdbcType=VARCHAR},-->
+<!--      #{garbageSource,jdbcType=VARCHAR}, #{garbageType,jdbcType=VARCHAR}, #{garbageNumber,jdbcType=INTEGER},-->
+<!--      #{remarks,jdbcType=VARCHAR}-->
+<!--      )-->
+<!--  </insert>-->
+  <insert id="insertSelective" parameterType="com.guofen.pojo.ShljAbnormalGarbage">
+    insert into shlj_abnormal_garbage
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="wagonNumber != null">
+        wagon_number,
+      </if>
+      <if test="garbageSource != null">
+        garbage_source,
+      </if>
+      <if test="garbageType != null">
+        garbage_type,
+      </if>
+      <if test="garbageNumber != null">
+        garbage_number,
+      </if>
+      <if test="garbageUnit != null">
+        garbage_unit,
+      </if>
+      <if test="recordingPerson != null">
+        recording_person,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="wagonNumber != null">
+        #{wagonNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="garbageSource != null">
+        #{garbageSource,jdbcType=VARCHAR},
+      </if>
+      <if test="garbageType != null">
+        #{garbageType,jdbcType=VARCHAR},
+      </if>
+      <if test="garbageNumber != null">
+        #{garbageNumber,jdbcType=INTEGER},
+      </if>
+      <if test="garbageUnit != null">
+        #{garbageUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.ShljAbnormalGarbage">
+    update shlj_abnormal_garbage
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="wagonNumber != null">
+        wagon_number = #{wagonNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="garbageSource != null">
+        garbage_source = #{garbageSource,jdbcType=VARCHAR},
+      </if>
+      <if test="garbageType != null">
+        garbage_type = #{garbageType,jdbcType=VARCHAR},
+      </if>
+      <if test="garbageNumber != null">
+        garbage_number = #{garbageNumber,jdbcType=INTEGER},
+      </if>
+      <if test="garbageUnit != null">
+        garbage_unit = #{garbageUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.ShljAbnormalGarbage">
+    update shlj_abnormal_garbage
+    set date = #{date,jdbcType=VARCHAR},
+      wagon_number = #{wagonNumber,jdbcType=VARCHAR},
+      garbage_source = #{garbageSource,jdbcType=VARCHAR},
+      garbage_type = #{garbageType,jdbcType=VARCHAR},
+      garbage_number = #{garbageNumber,jdbcType=INTEGER},
+      garbage_unit = #{garbageUnit,jdbcType=VARCHAR},
+      recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findLast" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_abnormal_garbage
+    where id=(select max(id) from shlj_abnormal_garbage)
+  </select>
+</mapper>

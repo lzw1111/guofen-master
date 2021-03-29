@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guofen.dao.ShljBlockageCleaningMapper">
+  <resultMap id="BaseResultMap" type="com.guofen.pojo.ShljBlockageCleaning">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="blockage_position" jdbcType="VARCHAR" property="blockagePosition" />
+    <result column="cleaning_person" jdbcType="VARCHAR" property="cleaningPerson" />
+    <result column="recording_person" jdbcType="VARCHAR" property="recordingPerson" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, time, blockage_position, cleaning_person, recording_person, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shlj_blockage_cleaning
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shlj_blockage_cleaning
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.guofen.pojo.ShljBlockageCleaning">
+    insert into shlj_blockage_cleaning (id, date, time, 
+      blockage_position, cleaning_person, recording_person, 
+      remarks)
+    values (#{id,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, 
+      #{blockagePosition,jdbcType=VARCHAR}, #{cleaningPerson,jdbcType=VARCHAR}, #{recordingPerson,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.guofen.pojo.ShljBlockageCleaning">
+    insert into shlj_blockage_cleaning
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="blockagePosition != null">
+        blockage_position,
+      </if>
+      <if test="cleaningPerson != null">
+        cleaning_person,
+      </if>
+      <if test="recordingPerson != null">
+        recording_person,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="blockagePosition != null">
+        #{blockagePosition,jdbcType=VARCHAR},
+      </if>
+      <if test="cleaningPerson != null">
+        #{cleaningPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.guofen.pojo.ShljBlockageCleaning">
+    update shlj_blockage_cleaning
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="blockagePosition != null">
+        blockage_position = #{blockagePosition,jdbcType=VARCHAR},
+      </if>
+      <if test="cleaningPerson != null">
+        cleaning_person = #{cleaningPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="recordingPerson != null">
+        recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.guofen.pojo.ShljBlockageCleaning">
+    update shlj_blockage_cleaning
+    set date = #{date,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      blockage_position = #{blockagePosition,jdbcType=VARCHAR},
+      cleaning_person = #{cleaningPerson,jdbcType=VARCHAR},
+      recording_person = #{recordingPerson,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findLast" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from shlj_blockage_cleaning
+    where id=(select max(id) from shlj_blockage_cleaning)
+  </select>
+</mapper>

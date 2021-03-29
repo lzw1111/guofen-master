@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c54f3f45-56e0-4e43-9e65-3b5f25ca5b3b" name="Default Changelist" comment="合并了一些固液分离">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d79dcb8c-4778-42fe-aced-3723f29bf1f6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d79dcb8c-4778-42fe-aced-3723f29bf1f6/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d79dcb8c-4778-42fe-aced-3723f29bf1f6/storage_v2/_src_/schema/sakila.oXLGyQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d79dcb8c-4778-42fe-aced-3723f29bf1f6/storage_v2/_src_/schema/sakila.oXLGyQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d79dcb8c-4778-42fe-aced-3723f29bf1f6/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/d79dcb8c-4778-42fe-aced-3723f29bf1f6/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/guofen (1).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/guofen.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guofen.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/Swagger2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/cylj/KitchenwasteDischargeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/cylj/KitchenwasteExportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/cylj/KitchenwasteIncomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/AbnormalGarbageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/BlockageCleaningController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/BottleCorrodibleSortingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/DeodorantSprayingtimeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/DeodorizationtowerWaterChangeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/ElectricityMeterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/EquipmentMaintenanceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/EquipmentRunningtimeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/StorageBoxCleanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/TroubleshootingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/WaterMeterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/shlj/YijingStationSellingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/sjq/DeodorizationCraftController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/sjq/OverhaulController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/sjq/SjqSolidliquidProduceElectricityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/sjq/SjqSolidliquidProduceInspectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/sjq/SjqSolidliquidProduceInspectionEquipmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/sjq/SolidliquidProduceFaultController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/sjq/SolidliquidProduceFlatmaterialController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/yf/RdDischargeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/controller/yf/RdFeedController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/KitchenwasteDischargeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/KitchenwasteExportMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/KitchenwasteIncomeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/RdDischargeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/RdFeedMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljAbnormalGarbageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljBlockageCleaningMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljBottleCorrodibleSortingStatisticMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljDeodorantSprayingtimeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljDeodorizationtowerWaterChangeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljElectricityMeterMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljEquipmentMaintenanceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljEquipmentRunningtimeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljStorageBoxCleanMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljTroubleshootingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljWaterElectricityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljWaterMeterMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljYijingStationSellingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqDeodorizationCraftMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqOverhaulMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqSolidliquidProduceElectricityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqSolidliquidProduceFaultMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqSolidliquidProduceFlatmaterialMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqSolidliquidProduceInspectionEquipmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqSolidliquidProduceInspectionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProcessMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionBackwashingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionDeliverWaterMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionElectricityConsumptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionEquipmentInspectionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionEquipmentMaintenanceDayMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionEquipmentMaintenanceMonthMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionEquipmentRunningMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/dao/SjqWaterProductionFailureMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/KitchenwasteDischarge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/KitchenwasteExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/KitchenwasteIncome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/RdDischarge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/RdFeed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljAbnormalGarbage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljBlockageCleaning.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljBottleCorrodibleSortingStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljDeodorantSprayingtime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljDeodorizationtowerWaterChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljElectricityMeter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljEquipmentMaintenance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljEquipmentRunningtime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljStorageBoxClean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljTroubleshooting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljWaterElectricity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljWaterMeter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/ShljYijingStationSelling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqDeodorizationCraft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqOverhaul.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqSolidliquidProduceElectricity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqSolidliquidProduceFault.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqSolidliquidProduceFlatmaterial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqSolidliquidProduceInspection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqSolidliquidProduceInspectionEquipment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionBackwashing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionDeliverWater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionElectricityConsumption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionEquipmentInspection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionEquipmentMaintenanceDay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionEquipmentMaintenanceMonth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionEquipmentRunning.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/pojo/SjqWaterProductionFailure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/cylj/KitchenwasteDischargeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/cylj/KitchenwasteExportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/cylj/KitchenwasteIncomeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/cylj/impl/KitchenwasteDischargeimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/cylj/impl/KitchenwasteExportimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/cylj/impl/KitchenwasteIncomeimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/AbnormalGarbageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/BlockageCleaningService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/BottleCorrodibleSortingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/DeodorantSprayingtimeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/DeodorizationtowerWaterChangeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/ElectricityMeterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/EquipmentMaintenanceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/EquipmentRunningtimeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/StorageBoxCleanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/TroubleshootingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/WaterMeterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/YijingStationSellingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/AbnormalGarbageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/BlockageCleaningServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/BottleCorrodibleSortingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/DeodorantSprayingtimeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/DeodorizationtowerWaterChangeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/ElectricityMeterServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/EquipmentMaintenanceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/EquipmentRunningtimeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/StorageBoxCleanServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/TroubleshootingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/WaterMeterServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/shlj/impl/YijingStationSellingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/DeodorizationCraftService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/OverhaulService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/SjqSolidliquidProduceElectricityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/SjqSolidliquidProduceInspectionEquipmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/SjqSolidliquidProduceInspectionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/SolidliquidProduceFaultService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/SolidliquidProduceFlatmaterialService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/impl/DeodorizationCraftServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/impl/OverhaulServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/impl/SjqSolidliquidProduceElectricityServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/impl/SjqSolidliquidProduceInspectionEquipmentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/impl/SjqSolidliquidProduceInspectionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/impl/SolidliquidProduceFaultServiceimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/sjq/impl/SolidliquidProduceFlatmaterialServiceimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/yf/RdDischargeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/yf/RdFeedService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/yf/impl/RdDischargeimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/service/yf/impl/RdFeedServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/util/Result/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/util/Result/ResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guofen/util/Result/ResultGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/KitchenwasteDischargeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/KitchenwasteExportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/KitchenwasteIncomeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/RdDischargeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/RdFeedMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljAbnormalGarbageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljBlockageCleaningMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljBottleCorrodibleSortingStatisticMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljDeodorantSprayingtimeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljDeodorizationtowerWaterChangeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljElectricityMeterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljEquipmentMaintenanceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljEquipmentRunningtimeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljStorageBoxCleanMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljTroubleshootingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljWaterElectricityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljWaterMeterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ShljYijingStationSellingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqDeodorizationCraftMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqOverhaulMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqSolidliquidProduceElectricityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqSolidliquidProduceFaultMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqSolidliquidProduceFlatmaterialMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqSolidliquidProduceInspectionEquipmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqSolidliquidProduceInspectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProcessMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionBackwashingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionDeliverWaterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionElectricityConsumptionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionEquipmentInspectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionEquipmentMaintenanceDayMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionEquipmentMaintenanceMonthMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionEquipmentRunningMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SjqWaterProductionFailureMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/guofen/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/Swagger2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/cylj/KitchenwasteDischargeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/cylj/KitchenwasteExportController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/cylj/KitchenwasteIncomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/AbnormalGarbageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/BlockageCleaningController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/BottleCorrodibleSortingController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/DeodorantSprayingtimeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/DeodorizationtowerWaterChangeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/ElectricityMeterController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/EquipmentMaintenanceController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/EquipmentRunningtimeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/StorageBoxCleanController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/TroubleshootingController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/WaterMeterController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/shlj/YijingStationSellingController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/sjq/DeodorizationCraftController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/sjq/OverhaulController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/sjq/SjqSolidliquidProduceElectricityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/sjq/SjqSolidliquidProduceInspectionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/sjq/SjqSolidliquidProduceInspectionEquipmentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/sjq/SolidliquidProduceFaultController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/sjq/SolidliquidProduceFlatmaterialController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/yf/RdDischargeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/controller/yf/RdFeedController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/KitchenwasteDischargeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/KitchenwasteExportMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/KitchenwasteIncomeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/RdDischargeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/RdFeedMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljAbnormalGarbageMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljBlockageCleaningMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljBottleCorrodibleSortingStatisticMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljDeodorantSprayingtimeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljDeodorizationtowerWaterChangeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljElectricityMeterMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljEquipmentMaintenanceMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljEquipmentRunningtimeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljStorageBoxCleanMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljTroubleshootingMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljWaterElectricityMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljWaterMeterMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/ShljYijingStationSellingMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqDeodorizationCraftMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqOverhaulMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqSolidliquidProduceElectricityMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqSolidliquidProduceFaultMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqSolidliquidProduceFlatmaterialMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqSolidliquidProduceInspectionEquipmentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqSolidliquidProduceInspectionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProcessMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionBackwashingMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionDeliverWaterMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionElectricityConsumptionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionEquipmentInspectionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionEquipmentMaintenanceDayMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionEquipmentMaintenanceMonthMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionEquipmentRunningMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/dao/SjqWaterProductionFailureMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/KitchenwasteDischarge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/KitchenwasteExport.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/KitchenwasteIncome.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/RdDischarge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/RdFeed.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljAbnormalGarbage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljBlockageCleaning.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljBottleCorrodibleSortingStatistic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljDeodorantSprayingtime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljDeodorizationtowerWaterChange.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljElectricityMeter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljEquipmentMaintenance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljEquipmentRunningtime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljStorageBoxClean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljTroubleshooting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljWaterElectricity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljWaterMeter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/ShljYijingStationSelling.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqDeodorizationCraft.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqOverhaul.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqSolidliquidProduceElectricity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqSolidliquidProduceFault.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqSolidliquidProduceFlatmaterial.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqSolidliquidProduceInspection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqSolidliquidProduceInspectionEquipment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProcess.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionBackwashing.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionDeliverWater.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionElectricityConsumption.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionEquipmentInspection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionEquipmentMaintenanceDay.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionEquipmentMaintenanceMonth.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionEquipmentRunning.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/pojo/SjqWaterProductionFailure.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/cylj/KitchenwasteDischargeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/cylj/KitchenwasteExportService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/cylj/KitchenwasteIncomeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/cylj/impl/KitchenwasteDischargeimpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/cylj/impl/KitchenwasteExportimpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/cylj/impl/KitchenwasteIncomeimpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/AbnormalGarbageService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/BlockageCleaningService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/BottleCorrodibleSortingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/DeodorantSprayingtimeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/DeodorizationtowerWaterChangeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/ElectricityMeterService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/EquipmentMaintenanceService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/EquipmentRunningtimeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/StorageBoxCleanService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/TroubleshootingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/WaterMeterService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/YijingStationSellingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/AbnormalGarbageServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/BlockageCleaningServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/BottleCorrodibleSortingServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/DeodorantSprayingtimeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/DeodorizationtowerWaterChangeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/ElectricityMeterServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/EquipmentMaintenanceServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/EquipmentRunningtimeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/StorageBoxCleanServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/TroubleshootingServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/WaterMeterServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/shlj/impl/YijingStationSellingServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/DeodorizationCraftService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/OverhaulService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/SjqSolidliquidProduceElectricityService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/SjqSolidliquidProduceInspectionEquipmentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/SjqSolidliquidProduceInspectionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/SolidliquidProduceFaultService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/SolidliquidProduceFlatmaterialService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/impl/DeodorizationCraftServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/impl/OverhaulServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/impl/SjqSolidliquidProduceElectricityServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/impl/SjqSolidliquidProduceInspectionEquipmentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/impl/SjqSolidliquidProduceInspectionServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/impl/SolidliquidProduceFaultServiceimpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/sjq/impl/SolidliquidProduceFlatmaterialServiceimpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/yf/RdDischargeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/yf/RdFeedService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/yf/impl/RdDischargeimpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/service/yf/impl/RdFeedServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/util/Result/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/util/Result/ResultCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/guofen/util/Result/ResultGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/KitchenwasteDischargeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/KitchenwasteExportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/KitchenwasteIncomeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/RdDischargeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/RdFeedMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljAbnormalGarbageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljBlockageCleaningMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljBottleCorrodibleSortingStatisticMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljDeodorantSprayingtimeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljDeodorizationtowerWaterChangeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljElectricityMeterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljEquipmentMaintenanceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljEquipmentRunningtimeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljStorageBoxCleanMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljTroubleshootingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljWaterElectricityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljWaterMeterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/ShljYijingStationSellingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqDeodorizationCraftMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqOverhaulMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqSolidliquidProduceElectricityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqSolidliquidProduceFaultMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqSolidliquidProduceFlatmaterialMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqSolidliquidProduceInspectionEquipmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqSolidliquidProduceInspectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProcessMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionBackwashingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionDeliverWaterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionElectricityConsumptionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionEquipmentInspectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionEquipmentMaintenanceDayMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionEquipmentMaintenanceMonthMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionEquipmentRunningMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/SjqWaterProductionFailureMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mybatis-generator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/guofen/AppTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.6.3\maven-repo" />
+        <option name="mavenHome" value="D:\apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="1oFHDPgGDgVnkplvUZSFr0qKy7a" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.guofen.service.shlj.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\javaProject\guofen\src\main\java\com\guofen\util" />
+      <recent name="E:\workspace\javaProject\guofen\src\main\java\com\guofen" />
+      <recent name="E:\SeisFlink源代码\guofen\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.guofen" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.guofen.service.shlj" />
+      <recent name="com.guofen.service" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.App (2)">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="guofen [mybatis-generator:generate]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="App (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="guofen (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guofen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.guofen.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="guofen-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guofen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.guofen.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="guofen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guofen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.guofen.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 7.0.105" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.105" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="$PROJECT_DIR$">
+          <settings>
+            <option name="CONTEXT_PATH" value="/guofen" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_7_0_105_guofen" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61755" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.105" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/guofen/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="$PROJECT_DIR$">
+          <settings>
+            <option name="CONTEXT_PATH" value="/guofen" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_guofen" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61755" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.guofen [mybatis-generator:generate]" />
+      <item itemvalue="Spring Boot.App" />
+      <item itemvalue="Spring Boot.App (1)" />
+      <item itemvalue="Spring Boot.App (2)" />
+      <item itemvalue="Tomcat Server.Tomcat 7.0.105" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.App (2)" />
+        <item itemvalue="Spring Boot.App (1)" />
+        <item itemvalue="Spring Boot.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c54f3f45-56e0-4e43-9e65-3b5f25ca5b3b" name="Default Changelist" comment="" />
+      <created>1612875297747</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612875297747</updated>
+      <workItem from="1612875300500" duration="1513000" />
+      <workItem from="1613264537328" duration="2044000" />
+      <workItem from="1613266605571" duration="817000" />
+      <workItem from="1613267516440" duration="737000" />
+      <workItem from="1613268257191" duration="202000" />
+      <workItem from="1613268483440" duration="127000" />
+      <workItem from="1613268614513" duration="21917000" />
+      <workItem from="1613784504488" duration="1011000" />
+      <workItem from="1613791655101" duration="12252000" />
+      <workItem from="1615470380799" duration="4193000" />
+      <workItem from="1615510242968" duration="3926000" />
+      <workItem from="1615858463724" duration="20000" />
+      <workItem from="1616123702595" duration="811000" />
+      <workItem from="1616126682131" duration="179000" />
+      <workItem from="1616143398718" duration="182000" />
+      <workItem from="1616238275574" duration="4176000" />
+      <workItem from="1616255969411" duration="2848000" />
+      <workItem from="1616291085746" duration="8188000" />
+      <workItem from="1616299452062" duration="702000" />
+      <workItem from="1616371635400" duration="315000" />
+      <workItem from="1616482229945" duration="9000" />
+      <workItem from="1616569308708" duration="771000" />
+      <workItem from="1616570100050" duration="120000" />
+      <workItem from="1616570249761" duration="124000" />
+      <workItem from="1616570466557" duration="1707000" />
+      <workItem from="1617021702120" duration="1247000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="合并了一些固液分离" />
+    <option name="LAST_COMMIT_MESSAGE" value="合并了一些固液分离" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="39" key="#Inspections" timestamp="1613266291591">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="233" y="39" key="#Inspections/0.0.1280.760@0.0.1280.760" timestamp="1613266291591" />
+    <state x="324" y="46" key="#Tomcat_Server" timestamp="1613306194640">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="324" y="46" key="#Tomcat_Server/0.0.1280.760@0.0.1280.760" timestamp="1613306194640" />
+    <state x="499" y="168" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1612876248627">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="168" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1612876248627" />
+    <state x="186" y="41" width="1086" height="719" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613306279411">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="186" y="41" width="1086" height="719" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.760@0.0.1280.760" timestamp="1613306279411" />
+    <state x="223" y="46" width="1089" height="778" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1612876105164" />
+    <state x="669" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1616292033439">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="446" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1280.760@0.0.1280.760" timestamp="1613359745956" />
+    <state x="535" y="98" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1615474391724" />
+    <state x="669" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616292033439" />
+    <state x="372" y="157" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1613360482986">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="372" y="157" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1280.760@0.0.1280.760" timestamp="1613360482986" />
+    <state x="441" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1612876201978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="441" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1612876201978" />
+    <state x="424" y="239" width="431" height="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1613309460346">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="424" y="239" width="431" height="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.760@0.0.1280.760" timestamp="1613309460346" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612876395864">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1612876395864" />
+    <state x="1026" y="272" key="FileChooserDialogImpl" timestamp="1617022705010">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1026" y="272" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617022705010" />
+    <state x="421" y="135" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1613306224659" />
+    <state x="205" y="152" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1613784592486" />
+    <state x="1144" y="400" key="Github.ShareDialog" timestamp="1617022331849">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1144" y="400" key="Github.ShareDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617022331849" />
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1616576835158">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835158" />
+    <state width="1238" height="203" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1613362676413" />
+    <state width="1493" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616371952323" />
+    <state width="1469" height="166" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374941" />
+    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1616576835158">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835158" />
+    <state width="1238" height="203" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1613362676413" />
+    <state width="1493" height="181" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616371952323" />
+    <state width="1469" height="166" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374940" />
+    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1616576835158">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835158" />
+    <state width="1238" height="203" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1613362676413" />
+    <state width="1493" height="181" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616371952323" />
+    <state width="1469" height="166" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374940" />
+    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1616576835158">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835158" />
+    <state width="1238" height="203" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1613362676413" />
+    <state width="1493" height="181" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616371952323" />
+    <state width="1469" height="166" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374940" />
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom" timestamp="1616576835150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835150" />
+    <state width="846" height="190" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1613362676405" />
+    <state width="1493" height="182" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615515849457" />
+    <state width="1469" height="166" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374941" />
+    <state width="1877" height="258" key="GridCell.Tab.1.center" timestamp="1616576835150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.1.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835150" />
+    <state width="846" height="190" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1613362676405" />
+    <state width="1493" height="182" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1615515849456" />
+    <state width="1469" height="166" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374941" />
+    <state width="1877" height="258" key="GridCell.Tab.1.left" timestamp="1616576835150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.1.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835150" />
+    <state width="846" height="190" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1613362676405" />
+    <state width="1493" height="182" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1615515849456" />
+    <state width="1469" height="166" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374941" />
+    <state width="1877" height="258" key="GridCell.Tab.1.right" timestamp="1616576835150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="258" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616576835150" />
+    <state width="846" height="190" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1613362676405" />
+    <state width="1493" height="182" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1615515849457" />
+    <state width="1469" height="166" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616300374941" />
+    <state width="1493" height="407" key="GridCell.Tab.2.bottom" timestamp="1613812584873">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.2.bottom/0.0.1280.760@0.0.1280.760" timestamp="1613362676406" />
+    <state width="1493" height="407" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1613812584873" />
+    <state width="1493" height="407" key="GridCell.Tab.2.center" timestamp="1613812584872">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.2.center/0.0.1280.760@0.0.1280.760" timestamp="1613362676406" />
+    <state width="1493" height="407" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1613812584872" />
+    <state width="1493" height="407" key="GridCell.Tab.2.left" timestamp="1613812584872">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.2.left/0.0.1280.760@0.0.1280.760" timestamp="1613362676406" />
+    <state width="1493" height="407" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1613812584872" />
+    <state width="1493" height="407" key="GridCell.Tab.2.right" timestamp="1613812584873">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.2.right/0.0.1280.760@0.0.1280.760" timestamp="1613362676406" />
+    <state width="1493" height="407" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1613812584873" />
+    <state width="846" height="190" key="GridCell.Tab.3.bottom" timestamp="1613306302589">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.3.bottom/0.0.1280.760@0.0.1280.760" timestamp="1613306302589" />
+    <state width="846" height="190" key="GridCell.Tab.3.center" timestamp="1613306302589">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.3.center/0.0.1280.760@0.0.1280.760" timestamp="1613306302589" />
+    <state width="846" height="190" key="GridCell.Tab.3.left" timestamp="1613306302589">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.3.left/0.0.1280.760@0.0.1280.760" timestamp="1613306302589" />
+    <state width="846" height="190" key="GridCell.Tab.3.right" timestamp="1613306302589">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="846" height="190" key="GridCell.Tab.3.right/0.0.1280.760@0.0.1280.760" timestamp="1613306302589" />
+    <state width="214" height="477" key="HiddenNamespacesPopup" timestamp="1613268151856">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="214" height="477" key="HiddenNamespacesPopup/0.0.1280.760@0.0.1280.760" timestamp="1613268151856" />
+    <state x="171" y="35" key="Maven.ArtifactSearchDialog" timestamp="1613280735916">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="171" y="35" key="Maven.ArtifactSearchDialog/0.0.1280.760@0.0.1280.760" timestamp="1613280735916" />
+    <state x="921" y="141" key="SettingsEditor" timestamp="1617022199659">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="921" y="141" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617022199659" />
+    <state x="152" y="46" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1613266811812" />
+    <state x="182" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616242806256" />
+    <state x="228" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616291182432" />
+    <state x="442" y="159" key="chooseDestDirectoryDialog" timestamp="1613308939289">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="442" y="159" key="chooseDestDirectoryDialog/0.0.1280.760@0.0.1280.760" timestamp="1613308939289" />
+    <state x="770" y="182" width="1036" height="630" key="dock-window-1" timestamp="1616291182834">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="770" y="182" width="1036" height="630" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1616291182834" />
+    <state x="319" y="0" width="641" height="760" key="find.popup" timestamp="1613307748300">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="319" y="0" width="641" height="760" key="find.popup/0.0.1280.760@0.0.1280.760" timestamp="1613307748300" />
+    <state x="300" y="173" width="672" height="677" key="run.anything.popup" timestamp="1613265927074">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="300" y="173" width="672" height="677" key="run.anything.popup/0.0.1280.760@0.0.1280.760" timestamp="1613265927074" />
+    <state x="447" y="326" width="672" height="678" key="search.everywhere.popup" timestamp="1616258674303">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="447" y="326" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616258674303" />
+    <state x="1058" y="186" key="svn.repositoryBrowser" timestamp="1617022316762">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1058" y="186" key="svn.repositoryBrowser/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617022316762" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/guofen/dao/ShljAbnormalGarbageMapper.java</url>
+          <line>11</line>
+          <properties class="com.guofen.dao.ShljAbnormalGarbageMapper" method="insert" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
